@@ -1,0 +1,38 @@
+<div class="btn-up btn-up_hide"></div>
+<div class="btn-bottom btn-bottom_hide"></div>
+<header class="header">
+  <div class="container header-container">
+    <a href="./index.html" class="logo">
+      <svg class="logo-icon" width="24" height="24">
+        <use href="./img/icons/symbol-defs.svg#icon-site-logo"></use>
+      </svg>
+      <span class="logo-name"> Bookshelf</span>
+    </a>
+    <!-- в мобилке навигацию убераем -->
+    <nav class="had-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="./index.html" class="had-nav-link">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a href="./shopping-list.html" class="had-nav-link"
+            >Shopping list
+            <svg class="header-icon-shopping" width="24" height="24">
+              <use href="./img/icons/symbol-defs.svg#icon-shopping"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ---- -->
+    <label id="switch" class="switch">
+      <input type="checkbox" onchange="toggleTheme()" id="slider" />
+      <span class="slider round"></span>
+    </label>
+    <!-- бургер создать "header-burger.html" -->
+    <div class="hed-burger">
+      <load src="./partials/header-burger.html" />
+    </div>
+    <!-- --- -->
+  </div>
+</header>
