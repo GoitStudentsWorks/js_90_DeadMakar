@@ -4,3 +4,6 @@
 .support-list {
   list-style-type: decimal-leading-zero;
 }
+.support-img {
+  filter: grayscale(100%);
+}
