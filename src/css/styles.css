@@ -1,9 +1,17 @@
-@import url(/src/css/fonts.css);
-@import url(/src/css/reset.css);
-@import url(/src/css/root.css);
-@import url(/src/css/basket.css);
-@import url(/src/css/books.css);
-@import url(/src/css/category.css);
-@import url(/src/css/header.css);
-@import url(/src/css/modal.css);
-@import url(/src/css/support-ukraine.css);
+@import url(./fonts.css);
+
+@import url(./reset.css);
+
+@import url(./root.css);
+
+@import url(./basket.css);
+
+@import url(./books.css);
+
+@import url(./category.css);
+
+@import url(./header.css);
+
+@import url(./modal.css);
+
+@import url(./support-ukraine.css);
