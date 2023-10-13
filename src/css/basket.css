@@ -20,14 +20,14 @@
 }
 .shopping-item {
   position: relative;
-  width: 335px;
+  max-width: 339px;
 }
 
 .shopping-list-item {
   display: flex;
   align-items: flex-start;
 
-  width: 335px;
+  max-width: 339px;
   height: 170px;
   padding: 14px;
   margin-top: 40px;
@@ -47,8 +47,8 @@
   height: 142px;
 }
 
-.shopping-list-item:hover .shopping-book-overlay-text,
-.shopping-list-item:focus .shopping-book-overlay-text {
+.shopping-book-overlay:hover .shopping-book-overlay-text,
+.shopping-book-overlay:focus .shopping-book-overlay-text {
   transform: translateY(-100%);
 }
 
@@ -103,7 +103,7 @@
   line-height: 1.29;
 
   margin-bottom: 16px;
-  width: 193px;
+  max-width: 193px;
   height: 57px;
   overflow: hidden;
 }
@@ -130,6 +130,12 @@
   position: absolute;
   right: 14px;
   top: 14px;
+  transition: box-shadow var(--transition);
+}
+
+.shopping-delete-btn:hover,
+.shopping-delete-btn:focus {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .shopping-delete-btn-icon {
@@ -148,11 +154,14 @@
 
 .shopping-link {
   filter: grayscale(100%);
+
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .shopping-link:hover,
 .shopping-link:focus {
-  filter: drop-shadow(0px 3px 3px 0px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  filter: grayscale(0%);
 }
 
 .shopping-error-text {
@@ -190,13 +199,13 @@
   }
 
   .shopping-item {
-    width: 704px;
+    max-width: 704px;
   }
 
   .shopping-list-item {
     display: flex;
 
-    width: 704px;
+    max-width: 708px;
     height: 213px;
     padding: 24px;
   }
@@ -209,11 +218,6 @@
   .shopping-book-overlay {
     height: 165px;
     width: 116px;
-  }
-
-  .shopping-list-item:hover .shopping-book-overlay-text,
-  .shopping-list-item:focus .shopping-book-overlay-text {
-    transform: translateY(-100%);
   }
 
   .shopping-book-overlay-text {
@@ -238,7 +242,7 @@
     letter-spacing: -0.56px;
 
     margin-bottom: 35px;
-    width: 508px;
+    max-width: 508px;
     height: 53px;
   }
   .shopping-book-author {
@@ -291,7 +295,7 @@
     line-height: 1.33;
     letter-spacing: -0.36px;
 
-    width: 349px;
+    max-width: 349px;
     margin: 0 auto;
     margin-bottom: 20px;
     margin-top: 140px;
@@ -307,13 +311,13 @@
 
 @media screen and (min-width: 1440px) {
   .shopping-list-item {
-    width: 996px;
+    max-width: 1000px;
   }
   .shopping-item {
-    width: 996px;
+    max-width: 1000px;
   }
   .shopping-book-description {
-    width: 808px;
+    max-width: 808px;
   }
   .support-container {
     width: 356px;
