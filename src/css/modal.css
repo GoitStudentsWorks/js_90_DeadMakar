@@ -19,10 +19,10 @@
   gap: 20px;
 }
 .amazon {
-  fill: #c0c0c0;
+  filter: grayscale(100%);
 }
 .img-book {
-  fill: #c0c0c0;
+  filter: grayscale(100%);
 }
 .hallo {
   display: flex;
