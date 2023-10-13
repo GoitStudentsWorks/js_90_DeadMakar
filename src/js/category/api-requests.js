@@ -7,3 +7,11 @@ export async function getBookCategory() {
   const response = await axios.get(URL);
   return response.data;
 }
+
+
+
+export async function getBestBook() {
+  const URL = `${BASEURL}top-books`;
+  const response = await axios.get(URL)
+  return response.data
+}
