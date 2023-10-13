@@ -77,6 +77,7 @@
   line-height: 1.09;
   letter-spacing: -0.88px;
 }
+
 .supp-scroll {
   display: flex;
   justify-content: center;
@@ -101,3 +102,29 @@
   transform: rotate(90deg);
   stroke: #4f2ee8;
 }
+
+
+ .btn{
+  justify-content: center;
+  cursor: pointer;
+   right: 10px;
+   bottom: 200px;
+  width: 32px;
+  height: 32px;
+   border-radius: 50%;
+   background-color: var(--violet-color);
+   bottom: 10px;
+   margin-top: 20px;
+   margin-left: 112px;
+   margin-bottom: 20px;
+} 
+
+.svg{
+  fill: var(--title-color-dark-mode);
+  transform: translate(30%, 30%) rotate(360deg);
+}
+
+
+
+ 
+
