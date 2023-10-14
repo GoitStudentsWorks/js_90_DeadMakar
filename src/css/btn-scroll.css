@@ -11,8 +11,6 @@
    background-color: var(--violet-color);
    opacity: 1;
    bottom: 10px;
-    
-
 }
 
 
@@ -58,10 +56,10 @@
   border-bottom: 5px solid white;
   border-right: 5px solid white;}
 
-/* .btn-up_hide {
+.btn-up_hide {
   display: none;
 }
 .btn-bottom_hide{
   display: none;
 
-} */
+}
