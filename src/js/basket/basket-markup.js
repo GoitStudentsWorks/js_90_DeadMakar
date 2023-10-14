@@ -1,6 +1,6 @@
-function cartMarkup(evt) {
-  const cartItem = evt
-    .map(cart => {
+export function cardMarkup(evt) {
+  const cardItem = evt
+    .map(() => {
       `<li class="shopping-item">
           <div class="shopping-list-item">
             <div class="shopping-book-overlay">
@@ -66,14 +66,11 @@ function cartMarkup(evt) {
         </li>`;
     })
     .join('');
-  ulShopEl.insertAdjacentHTML('beforeend', cartItem);
+  ulShopEl.insertAdjacentHTML('beforeend', cardItem);
 }
 
-function onErrorStub(evt) {
-  const stubItem = `<div class="shopping-error-item container">
-  <div class="shopping-error-item">
-    <div class="support-container"></div>
-    <div class="shopping-error-wrap">
+export function onErrorStubMarkup(evt) {
+  const stubItem = `<div class="shopping-error-wrap">
       <p class="shopping-error-text">
         This page is empty, add some books and proceed to order.
       </p>
@@ -84,8 +81,6 @@ function onErrorStub(evt) {
         width="265"
         height="198"
       />
-    </div>
-  </div>
-</div>`;
+    </div>`;
   sectionShopEl.innerHTML = stubItem;
 }
