@@ -1,4 +1,4 @@
-import { getBookByCategory } from '../category/api-requests';
+import { getBookCategory } from '../category/api-requests';
 import { getMarkupByCategory } from './books-markup';
 import { booksSelectors } from './books-selectors';
 
@@ -26,7 +26,7 @@ export async function createBookByCategory(event) {
   //   booksSelectors.booksContainer.innerHTML = '';
   console.log(categoryToSearch);
   const toSearchData = encodeURIComponent(categoryToSearch); // Оголошення toSearchData
-  const data = await getBookByCategory(toSearchData);
+  const data = await getBookCategory(toSearchData);
   console.log(data);
   const bookList = document.createElement('ul');
   bookList.classList.add('book-list');
