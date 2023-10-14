@@ -14,7 +14,7 @@ export async function makeAllCategoriesContent() {
     const bestBooksData = await getBestBook();
 
     const bestBookMarkup = getMarkupBestBooks(bestBooksData);
-    booksSelectors.booksContainer.insertAdjacentHTML(
+    booksSelectors.onlyBooksContent.insertAdjacentHTML(
       'beforeend',
       bestBookMarkup
     );
@@ -35,3 +35,6 @@ export async function makeAllCategoriesContent() {
     Notiflix.Notify.info('Sorry, no books found..');
   }
 }
+
+
+// Need to fix the dark theme css

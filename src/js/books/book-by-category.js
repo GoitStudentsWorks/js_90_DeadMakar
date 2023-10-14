@@ -1,37 +1,59 @@
-import { getBookByCategory } from '../category/api-requests';
-import { getMarkupByCategory } from './books-markup';
+import { getCategoryByBook, getBestBook } from '../category/api-requests';
+import { getMarkupByCategory, getMarkupBestBooks } from './books-markup';
 import { booksSelectors } from './books-selectors';
+import { categorySelectors } from '../category/category-selectors';
+import Notiflix from 'notiflix';
 
-// export async function createBookByCategory(event) {
-//   if (event && event.target) {
-//     const categoryToSearch = event.target.textContent;
-//     let toSearchData = encodeURIComponent(categoryToSearch);
-//     return toSearchData;
-//   }
-//   const data = await getBookByCategory(toSearchData);
-//   console.log(data);
-//   const bookList = document.createElement('ul');
-//   bookList.classList.add('book-list');
-//   //   bookList.innerHTML = markup;
-//   booksSelectors.allCategoryName.insertAdjacentElement('afterend', bookList);
-
-//   const markup = getMarkupByCategory(data);
-//   //   booksSelectors.bookList.innerHTML = markup;
-//   bookList.innerHTML = markup;
-//   //   booksSelectors.booksContainer.innerHTML = '';
-// }
 
 export async function createBookByCategory(event) {
-  const categoryToSearch = event.srcElement.innerText;
-  //   booksSelectors.booksContainer.innerHTML = '';
-  console.log(categoryToSearch);
-  const toSearchData = encodeURIComponent(categoryToSearch); // Оголошення toSearchData
-  const data = await getBookByCategory(toSearchData);
-  console.log(data);
+  try {
+    if (event.target.textContent === "All categories") {
+      booksSelectors.onlyBooksContent.innerHTML = ''
+     booksSelectors.allCategoryName.innerHTML =
+      'Best Sellers <span class ="category-name-bold">Books</span>';
+    categorySelectors.allCategory.classList.add('category-active');
+    const bestBooksData = await getBestBook();
+    const bestBookMarkup = getMarkupBestBooks(bestBooksData);
+    booksSelectors.onlyBooksContent.insertAdjacentHTML(
+      'beforeend',
+      bestBookMarkup
+    ) 
+    }
+    
+
+
+
+else {const categoryToSearch = event.srcElement.innerText;
+  const toSearchData = encodeURIComponent(categoryToSearch); 
+  const data = await getCategoryByBook(toSearchData);
+      booksSelectors.onlyBooksContent.innerHTML = ''
+
+      // Need to add/remove the active class 
+      // + check the css for categories
+
+titleColor(categoryToSearch)
+
+
+    categorySelectors.allCategory.classList.add('category-active');
   const bookList = document.createElement('ul');
   bookList.classList.add('book-list');
-  booksSelectors.allCategoryName.insertAdjacentElement('afterend', bookList);
+  booksSelectors.onlyBooksContent.insertAdjacentElement('beforeend', bookList);
 
   const markup = getMarkupByCategory(data);
-  bookList.innerHTML = markup;
+  bookList.innerHTML = markup;}
+  }
+
+  catch (error) {
+   Notiflix.Notify.info('Sorry, no books found..');
+  }
+}
+
+
+
+
+ function titleColor(inputString) {
+const words = inputString.split(' ');
+const lastWord = words[words.length - 1];
+const modifiedString = inputString.replace(lastWord, `<span class="category-name-bold">${lastWord}</span>`);
+ booksSelectors.allCategoryName.innerHTML = modifiedString;
 }
