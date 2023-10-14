@@ -20,7 +20,6 @@ function onGetLocalArr() {
   } catch (error) {
     onErrorStubMarkup();
   }
-  return saveCardArr;
 }
 
 function onRemoveCard(evt) {
