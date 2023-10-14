@@ -13,6 +13,7 @@
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   padding: 40px 24px;
+  position: relative;
 }
 .icon-x-close {
   stroke: #111111;
@@ -53,7 +54,10 @@
   margin-bottom: 44px;
 }
 .modal-icon-x-close {
-  fill: #111111;
+  stroke: #111111;
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
 
 .modal-information {
@@ -83,4 +87,61 @@
   font-weight: 400;
   line-height: 1.2; /* 120% */
   letter-spacing: -0.4px;
+}
+@media screen and (min-width: 579px) {
+  .modal-btn-books {
+    width: 499px;
+    height: 64px;
+  }
+  .modal-container {
+    width: 579px;
+  }
+  .modal-message {
+    width: 342px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: -0.48px;
+    text-align: center;
+  }
+  .modal-information {
+    display: flex;
+  }
+  .modal-book-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.16; /* 116.667% */
+    letter-spacing: -0.96px;
+  }
+  .modal-author {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.28; /* 128.571% */
+    letter-spacing: -0.56px;
+    margin-bottom: 20px;
+  }
+  .modal-description {
+    width: 279px;
+    font-size: 14px;
+    line-height: 1.28; /* 128.571% */
+    letter-spacing: -0.56px;
+    margin-bottom: 20px;
+  }
+  .modal-icon-x-close {
+    right: 24px;
+    top: 24px;
+  }
+  .modal-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-tex {
+  }
+  .modal-ann {
+  }
+  .modal-paragraf {
+  }
+  .modal-tex-meseg {
+    display: flex;
+    flex-direction: column;
+  }
 }
