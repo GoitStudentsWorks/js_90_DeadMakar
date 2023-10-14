@@ -2,7 +2,7 @@ import { shopCardMarkup } from './basket-markup';
 import { onErrorStubMarkup } from './basket-markup';
 import { selectors } from './basket-selectors';
 
-selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
+// selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
 
 onGetLocalArr();
 
