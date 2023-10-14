@@ -14,16 +14,11 @@ export async function getBestBook() {
   return response.data;
 }
 
-
-
-export async function getBookByCategory(request) {
-  const URL = `${BASEURL}category?category=${request}`;
-=======
 export async function getCategoryBook(category) {
   const URL = `${BASEURL} category?category=${category}`;
 
   const response = await axios.get(URL);
   return response.data;
 }
-=======
+
 
