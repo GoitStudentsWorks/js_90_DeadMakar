@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import { categorySelectors } from '../category/category-selectors';
 import { makeAllCategoriesContent } from './all-category-content';
 import { createBookByCategory } from './book-by-category';
