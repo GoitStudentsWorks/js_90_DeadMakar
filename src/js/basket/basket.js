@@ -9,7 +9,7 @@ import { STORED_BOOKS } from '../modal/modal-local-storage';
 onGetLocalArr();
 
 function onGetLocalArr() {
-  const saveCardArr = JSON.parse(localStorage.getItem(STORED_BOOKS));
+  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks')) || {};
   console.log(saveCardArr);
 
   try {
@@ -21,7 +21,7 @@ function onGetLocalArr() {
 
     onRemoveCard(saveCardArr);
   } catch (error) {
-    // onErrorStubMarkup(saveCardArr);
+    onErrorStubMarkup(saveCardArr);
   }
 }
 
