@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { BASEURL } from '../category/api-requests';
 
-export async function getBookById(bookId) {
+export async function fetchBookById(bookId) {
   const URL_ID = `${BASEURL}${bookId}`;
   try {
     const response = await axios.get(URL_ID);
