@@ -1,7 +1,8 @@
-import { Axios } from 'axios';
-const ulShopEl = document.querySelector('.shopping-list-container');
-const sectionShopEl = document.querySelector('.shopping-list-section');
-// const KEY = 'feedback-form-state';
+import { cardMarkup } from './basket-markup';
+import { onErrorStubMarkup } from './basket-markup';
+import { selectors } from './basket-selectors';
+
+// const STOREDBOOKS = 'books';
 // let formData = JSON.parse(localStorage.getItem(KEY)) || {};
 
 // populateForm();
@@ -12,15 +13,18 @@ const sectionShopEl = document.querySelector('.shopping-list-section');
 //   localStorage.setItem(KEY, JSON.stringify(formData));
 // }
 
-function onGetLocalArr({
-  id,
-  list_name,
-  book_image,
-  description,
-  author,
-  title,
-}) {
+// id,
+//   list_name,
+//   book_image,
+//   description,
+//   author,
+//   title,
+
+function onGetLocalArr() {
   const saveCart = JSON.parse(localStorage.getItem(STOREDBOOKS));
+  if (saveCart.length === 0) {
+    onErrorStubMarkup();
+  }
 
   // if (saveCart) {
   //   // emailEl.value = saveMessage.email || '';
