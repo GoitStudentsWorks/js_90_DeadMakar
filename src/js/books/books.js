@@ -2,11 +2,9 @@ import { categorySelectors } from '../category/category-selectors';
 import { makeAllCategoriesContent } from './all-category-content';
 import { createBookByCategory } from './book-by-category';
 import { booksSelectors } from './books-selectors';
-=======
-import { categorySelectors } from "../category/category-selectors";
-import { makeAllCategoriesContent } from "./all-category-content";
-import 
->>>>>>> Stashed changes
+
+import { categorySelectors } from '../category/category-selectors';
+import { makeAllCategoriesContent } from './all-category-content';
 
 // makeAllCategoriesContent();
 
@@ -14,8 +12,6 @@ import
 //   'click',
 //   makeAllCategoriesContent
 // );
-
-// ----------------
 
 // createBookByCategory();
 

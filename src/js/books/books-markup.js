@@ -1,7 +1,5 @@
-<<<<<<< Updated upstream
 import { booksSelectors } from './books-selectors';
-=======
->>>>>>> Stashed changes
+
 export function getMarkupBestBooks(bookData) {
   const markup = bookData
     .map(item => {
@@ -30,9 +28,6 @@ export function getMarkupBestBooks(bookData) {
   return markup;
 }
 
-<<<<<<< Updated upstream
-// ---------------
-
 export function getMarkupByCategory(data) {
   const markup = data
     .map(item => {
@@ -46,7 +41,6 @@ export function getMarkupByCategory(data) {
     .join('');
   return markup;
 }
-=======
 //     <ul class="book-list">
 //                     <li class="book-card" data-id="${book._id}">
 //                         <img class="photo-card" src="${book.book_image}" alt="${book.title}" />
@@ -54,4 +48,3 @@ export function getMarkupByCategory(data) {
 //                         <p class="book-author">${book.author}</p>
 //                     </li>
 //    </ul>
->>>>>>> Stashed changes
