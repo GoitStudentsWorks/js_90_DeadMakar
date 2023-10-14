@@ -1,6 +1,7 @@
-import { booksSelectors } from './books-selectors';
 
 export function getMarkupBestBooks(bookData) {
+const maxBookNameLength = 16;
+  const maxAuthorName = 32;
   const markup = bookData
     .map(item => {
       return `
@@ -13,8 +14,8 @@ export function getMarkupBestBooks(bookData) {
                     book => `
                     <li class="book-card" data-id="${book._id}">
                         <img class="photo-card" src="${book.book_image}" alt="${book.title}" />
-                        <h3 class="book-name">${book.title}</h3>
-                        <p class="book-author">${book.author}</p>
+                        <h3 class="book-name">${truncateBookName(book.title, maxBookNameLength)}</h3>
+                        <p class="book-author">${truncateBookName(book.author, maxAuthorName)}</p>
                     </li>`
                   )
                   .join('')}
@@ -29,22 +30,27 @@ export function getMarkupBestBooks(bookData) {
 }
 
 export function getMarkupByCategory(data) {
+  const maxBookNameLength = 16;
+  const maxAuthorName = 32;
+  
   const markup = data
     .map(item => {
       return `
         <li class="book-item" data-id="${item._id}">
           <img class="photo-card" src="${item.book_image}" alt="${item.title}" />
-          <h3 class="book-name">${item.title}</h3>
-          <p class="book-author">${item.author}</p>
+          <h3 class="book-name">${truncateBookName(item.title, maxBookNameLength)}</h3>
+          <p class="book-author">${truncateBookName(item.author, maxAuthorName)}</p>
         </li>`;
     })
     .join('');
   return markup;
 }
-//     <ul class="book-list">
-//                     <li class="book-card" data-id="${book._id}">
-//                         <img class="photo-card" src="${book.book_image}" alt="${book.title}" />
-//                         <h3 class="book-name">${book.title}</h3>
-//                         <p class="book-author">${book.author}</p>
-//                     </li>
-//    </ul>
+
+
+
+function truncateBookName(bookName, maxLength) {
+  if (bookName.length > maxLength) {
+    return `${bookName.slice(0, maxLength)}...`;
+  }
+  return bookName;
+}

@@ -38,6 +38,8 @@
   font-size: 16px;
   line-height: 1.125;
   letter-spacing: -0.32px;
+
+  cursor: pointer;
 }
 
 .dark-category {
