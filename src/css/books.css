@@ -1,6 +1,7 @@
 .books-section {
   margin-top: 40px;
 }
+
 .books-container {
   max-width: 375px;
   padding-left: 20px;
@@ -237,4 +238,7 @@
     width: 180px;
     margin-bottom: 0;
   }
+}
+.book-by-category {
+  display: block;
 }
