@@ -1,6 +1,6 @@
-// import { shopCardMarkup } from './basket-markup';
-// import { onErrorStubMarkup } from './basket-markup';
-// import { selectors } from './basket-selectors';
+import { shopCardMarkup } from './basket-markup';
+import { onErrorStubMarkup } from './basket-markup';
+import { selectors } from './basket-selectors';
 import { STORED_BOOKS } from '../modal/modal-local-storage';
 
 // selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
@@ -9,7 +9,7 @@ import { STORED_BOOKS } from '../modal/modal-local-storage';
 onGetLocalArr();
 
 function onGetLocalArr() {
-  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks'));
+  const saveCardArr = JSON.parse(localStorage.getItem(STORED_BOOKS));
   console.log(saveCardArr);
 
   try {
