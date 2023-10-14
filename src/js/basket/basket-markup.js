@@ -1,4 +1,6 @@
-export function cardMarkup(evt) {
+import { selectors } from './basket-selectors';
+
+export function shopCardMarkup(evt) {
   const cardItem = evt
     .map(() => {
       `<li class="shopping-item">
@@ -66,10 +68,10 @@ export function cardMarkup(evt) {
         </li>`;
     })
     .join('');
-  ulShopEl.insertAdjacentHTML('beforeend', cardItem);
+  selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
 }
 
-export function onErrorStubMarkup(evt) {
+export function onErrorStubMarkup() {
   const stubItem = `<div class="shopping-error-wrap">
       <p class="shopping-error-text">
         This page is empty, add some books and proceed to order.
@@ -82,5 +84,6 @@ export function onErrorStubMarkup(evt) {
         height="198"
       />
     </div>`;
-  sectionShopEl.innerHTML = stubItem;
+  selectors.ShopStubEl.innerHTML = stubItem;
+  return stubItem;
 }

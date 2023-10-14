@@ -4,10 +4,9 @@ import { saveBookToStorage, getStoredBooks } from './modal-local-storage';
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', async function (event) {
     const closestLi = event.target.closest('li.book-card');
-    console.log(closestLi);
+
     if (closestLi) {
       const bookId = closestLi.dataset.id;
-      console.log(bookId);
 
       try {
         const bookData = await fetchBookById(bookId);
