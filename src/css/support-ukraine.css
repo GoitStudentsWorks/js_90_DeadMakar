@@ -46,8 +46,7 @@
   filter: grayscale(100%);
   filter: brightness(0) invert(1);
 }
-.container-support {
-}
+
 .container-title-supp {
   display: flex;
   flex-direction: row;
@@ -73,8 +72,7 @@
   justify-content: start;
   align-items: start;
 }
-.support-img {
-}
+
 .title-Ukr {
   font-size: 22px;
   color: #fff;
@@ -103,6 +101,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.hidden-supp {
+  display: none;
 }
 .supp-arrow {
   transform: rotate(90deg);

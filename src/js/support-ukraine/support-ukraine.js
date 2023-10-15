@@ -1,21 +1,23 @@
-// Імпортуємо бібліотеку Swiper
-import Swiper from 'swiper/bundle';
+const container = document.querySelector('.container-ul-supp');
+const scrollButton = document.querySelector('.supp-btn');
+const itemsToShow = 6;
+const totalItems = document.querySelectorAll('.supp-li').length;
+let startIndex = 0;
 
-// Ініціалізуємо Swiper
-const swiper = new Swiper('.swiper-container', {
-  direction: 'vertical', // Прокручування вниз
-  slidesPerView: '9', // Кількість видимих слайдів
-  freeMode: true, // Вільний режим прокрутки
+scrollButton.addEventListener('click', () => {
+  startIndex += itemsToShow;
+  updateVisibility();
 });
 
-// Отримуємо номер слайда, на який потрібно прокрутити
-const targetSlideIndex = 9;
+function updateVisibility() {
+  const listItems = document.querySelectorAll('.supp-li');
+  listItems.forEach((item, index) => {
+    if (index >= startIndex && index < startIndex + itemsToShow) {
+      item.classList.remove('hidden-supp');
+    } else {
+      item.classList.add('hidden-supp');
+    }
+  });
+}
 
-// Отримуємо кнопку
-const scrollToSlideBtn = document.getElementById('scrollToSlideBtn');
-
-// Додаємо обробник події для кнопки
-scrollToSlideBtn.addEventListener('click', function () {
-  // Прокручуємо до вказаного слайда з плавністю
-  swiper.slideTo(targetSlideIndex, 1000, false);
-});
+updateVisibility();
