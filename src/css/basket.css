@@ -11,6 +11,14 @@
   letter-spacing: -1.28px;
 }
 
+.support-container {
+  display: none;
+  width: 356px;
+  height: 447px;
+  background-color: var(--violet-color);
+  border-radius: 16px;
+}
+
 .shopping-hero-text {
   color: var(--violet-color);
   font-size: 32px;
@@ -24,7 +32,7 @@
 }
 .shopping-item {
   position: relative;
-  max-width: 339px;
+  max-width: 335px;
   margin-bottom: 20px;
 }
 
@@ -32,7 +40,7 @@
   display: flex;
   align-items: flex-start;
 
-  max-width: 339px;
+  max-width: 335px;
   height: 170px;
   padding: 14px;
 
@@ -171,22 +179,25 @@
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Sub ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+.shopping-error-wrap {
+  list-style: none;
+}
+
 .shopping-error-text {
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.28px;
-
+  margin: 0 auto;
   margin-top: 120px;
   margin-bottom: 14px;
+  width: 244px;
+  text-align: center;
 }
 
-/* .shopping-error-item {
+.shopping-error-item {
   display: flex;
-} */
-.shopping-error-wrap {
-  margin-left: 315px;
 }
 
 .shopping-error-img {
@@ -305,7 +316,7 @@
     line-height: 1.33;
     letter-spacing: -0.36px;
 
-    max-width: 349px;
+    width: 349px;
     margin: 0 auto;
     margin-bottom: 20px;
     margin-top: 140px;
@@ -320,20 +331,18 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~ Media 1440 ~~~~~~~~~~~~~~~~~~~~~~ */
 
 @media screen and (min-width: 1440px) {
-  .shopping-list-item {
-    max-width: 1000px;
-  }
   .shopping-item {
-    max-width: 1000px;
+    min-width: 996px;
   }
+  .shopping-list-item {
+    max-width: 996px;
+  }
+
   .shopping-book-description {
     max-width: 808px;
   }
   .support-container {
-    width: 356px;
-    height: 447px;
-    background-color: var(--violet-color);
-    border-radius: 16px;
+    display: block;
   }
   .shopping-container {
     display: flex;
@@ -343,4 +352,7 @@
     gap: 356px;
     justify-content: flex-start;
   } */
+  .shopping-error-wrap {
+    margin-left: 315px;
+  }
 }

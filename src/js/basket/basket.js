@@ -1,36 +1,40 @@
 import { shopCardMarkup } from './basket-markup';
 import { onErrorStubMarkup } from './basket-markup';
-import { selectors } from './basket-selectors';
 import { KEY } from '../modal/modal-local-storage';
+import { selectors } from './basket-selectors';
+import Notiflix from 'notiflix';
+
+let cardArr = JSON.parse(localStorage.getItem(KEY)) || [];
 
 onGetLocalArr();
 
 function onGetLocalArr() {
   try {
-    const cardArr = JSON.parse(localStorage.getItem(KEY));
-    console.log(cardArr);
-
-    console.log(cardArr);
-    shopCardMarkup(cardArr);
     if (cardArr.length === 0) {
       onErrorStubMarkup(cardArr);
       return;
     }
-
-    // onRemoveCard(saveCardArr);
+    shopCardMarkup(cardArr);
   } catch (error) {
     console.error('Error:', error);
-    // onErrorStubMarkup(saveCardArr);
+    Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
   }
 }
 
+// selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
+onRemoveCard(cardArr);
+
 function onRemoveCard(evt) {
+  console.log(evt);
   let removeArr = evt;
   const cardTarget = evt.currentTarget;
+  console.log(cardTarget);
   const cardIndex = evt.indexOf(cardTarget);
   const removeIndex = evt.splice(cardIndex, 1);
 
-  localStorage.setItem(STORED_BOOKS, JSON.stringify(removeArr));
+  localStorage.setItem(KEY, JSON.stringify(removeArr));
 }
 
 // listItem.addEventListener("onclick", function(e) {

@@ -28,12 +28,20 @@
 .icon-x-close {
   stroke: #111111;
 }
+.conteinerImg{
+  width: 100%;
+  height: 100%;
+}
+
+
+
 
 .modal-book-image {
   text-align: center;
   margin-bottom: 14px;
   align-items: center;
 }
+
 .modal-book-title {
   color: #111;
   font-size: 16px;
@@ -59,7 +67,8 @@
   margin-bottom: 14px;
 }
 .modal-links {
-  display: flex;
+  display: inline-flex;
+margin-left: 24px;
   gap: 20px;
   margin-bottom: 44px;
 }
@@ -70,8 +79,14 @@
   top: 12px;
 }
 
-.modal-information {
+.vse{
+display: flex;
+    flex-direction: row;
 }
+
+/* .modal-information {
+
+} */
 .amazon {
   filter: grayscale(100%);
 }

@@ -153,8 +153,10 @@ suppBtn.addEventListener('click', () => {
     suppBtn.style.transform = 'rotate(90deg)';
     clickCount = 0;
     firstClick = false;
+
     resetFonds();
-  }
+
+  } 
 
   setTimeout(() => {
     if (clickCount === 1) {
