@@ -1,7 +1,8 @@
 import { categorySelectors } from '../category/category-selectors';
 import { createBookByCategory } from './book-by-category';
 import {makeAllCategoriesContent} from './all-category-content'
-
+import { booksSelectors } from './books-selectors';
+import { openAllCategoryHandle } from './book-by-category';
 
 
 makeAllCategoriesContent();
@@ -9,4 +10,5 @@ makeAllCategoriesContent();
 
 categorySelectors.categoryList.addEventListener('click', createBookByCategory);
 
-// Need to make listener on the btn
+booksSelectors.onlyBooksContent.addEventListener('click', openAllCategoryHandle)
+
