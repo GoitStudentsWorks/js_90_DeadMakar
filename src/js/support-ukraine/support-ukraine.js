@@ -3,7 +3,7 @@ const suppBtn = document.querySelector('.supp-btn');
 let clickCount = 0;
 let firstClick = false;
 
-const fonds = [
+const initialFonds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
@@ -77,6 +77,8 @@ const fonds = [
     height: 10,
   },
 ];
+const fonds = [...initialFonds];
+let currentState = [...fonds];
 
 const itemsPerPage = 6;
 let currentPage = 0;
@@ -128,14 +130,14 @@ function updateList() {
   }
   fondsList.appendChild(fragment);
 }
-
-function scrollUp() {
-  currentPage = (currentPage - 1 + fonds.length) % fonds.length;
+function resetFonds() {
+  currentState = [...initialFonds];
+  currentPage = 0;
   updateList();
 }
 
-function scrollDown() {
-  currentPage = (currentPage + 1) % fonds.length;
+function scrollUp() {
+  currentPage = (currentPage - 1 + fonds.length) % fonds.length;
   updateList();
 }
 
@@ -151,11 +153,10 @@ suppBtn.addEventListener('click', () => {
     suppBtn.style.transform = 'rotate(90deg)';
     clickCount = 0;
     firstClick = false;
-  } else if (clickCount === 3) {
-    suppBtn.style.transition = 'transform 0.3s ease';
-    suppBtn.style.transform = 'rotate(270deg)';
-    clickCount = 1;
-  }
+
+    resetFonds();
+
+  } 
 
   setTimeout(() => {
     if (clickCount === 1) {
