@@ -16,7 +16,7 @@ export async function createBookByCategory(event) {
     } else if (!event.target.classList.contains('category-item')) {
       return;
     } else {
-      // Remove the 'category-active' class from all category items
+      // Remove the active class
       const categoryItems = document.querySelectorAll('.category-item');
       categoryItems.forEach(item => {
         item.classList.remove('category-active');
@@ -25,11 +25,9 @@ export async function createBookByCategory(event) {
       const toSearchData = encodeURIComponent(categoryToSearch);
       const data = await getCategoryByBook(toSearchData);
       booksSelectors.onlyBooksContent.innerHTML = '';
-      // Add the 'category-active' class to the clicked item
+      // Add the active class
       event.target.classList.add('category-active');
       titleColor(categoryToSearch);
-      // Remove the 'category-active' class from the "All categories" item
-      categorySelectors.allCategory.classList.remove('category-active');
       const bookList = document.createElement('ul');
       bookList.classList.add('book-list');
       booksSelectors.onlyBooksContent.insertAdjacentElement(
@@ -61,20 +59,16 @@ export async function openAllCategoryHandle(event) {
     const toSearchData = encodeURIComponent(categoryName);
     const data = await getCategoryByBook(toSearchData);
     booksSelectors.onlyBooksContent.innerHTML = '';
-    // Need add/remove the active class
-    //  categorySelectors.categoryItemA.classList.remove('category-active');
-    // Remove the 'category-active' class from the "All categories" item
+    // Add/remove the active class
     const categoryItems = document.querySelectorAll('.category-item');
     categoryItems.forEach(item => {
+      categorySelectors.allCategory.classList.remove('category-active');
       item.classList.remove('category-active');
       if (item.textContent === categoryName) {
         item.classList.add('category-active');
       }
     });
-    // categorySelectors.allCategory.classList.remove('category-active');
-    // -----
     titleColor(categoryName);
-    categorySelectors.allCategory.classList.add('category-active');
     const bookList = document.createElement('ul');
     bookList.classList.add('book-list');
     booksSelectors.onlyBooksContent.insertAdjacentElement(
