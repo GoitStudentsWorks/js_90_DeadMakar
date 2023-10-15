@@ -1,6 +1,8 @@
-// import { shopCardMarkup } from './basket-markup';
-// import { onErrorStubMarkup } from './basket-markup';
-// import { selectors } from './basket-selectors';
+
+import { shopCardMarkup } from './basket-markup';
+import { onErrorStubMarkup } from './basket-markup';
+import { selectors } from './basket-selectors';
+
 // import { STORED_BOOKS } from '../modal/modal-local-storage';
 
 // selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
@@ -9,7 +11,7 @@
 onGetLocalArr();
 
 function onGetLocalArr() {
-  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks'));
+  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks')) || [];
   console.log(saveCardArr);
 
   try {
@@ -21,7 +23,7 @@ function onGetLocalArr() {
 
     onRemoveCard(saveCardArr);
   } catch (error) {
-    // onErrorStubMarkup(saveCardArr);
+    onErrorStubMarkup(saveCardArr);
   }
 }
 
