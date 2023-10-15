@@ -1,12 +1,14 @@
-export function cardMarkup(evt) {
-  const cardItem = evt
+import { selectors } from './basket-selectors';
+
+export function shopCardMarkup(bookData) {
+  const cardItem = bookData
     .map(() => {
       `<li class="shopping-item">
           <div class="shopping-list-item">
             <div class="shopping-book-overlay">
               <img
                 class="shopping-book-img"
-                src="${book_image}"
+                src="${bookData.book_image}"
                 alt="book"
                 width="100"
                 height="142"
@@ -16,7 +18,7 @@ export function cardMarkup(evt) {
             </div>
 
             <div class="shopping-item-container">
-              <h3 class="${title}</h3>
+              <h3 class="${bookData.title}</h3>
 
               <p class="shopping-book-category-text">${list_name}</p>
 
@@ -24,7 +26,7 @@ export function cardMarkup(evt) {
               ${description}
               </p>
 
-              <p class="shopping-book-author">${author}</p>
+              <p class="shopping-book-author">${bookData.author}</p>
 
               <div class="shopping-link-wrap">
                 <a
@@ -66,10 +68,33 @@ export function cardMarkup(evt) {
         </li>`;
     })
     .join('');
-  ulShopEl.insertAdjacentHTML('beforeend', cardItem);
+  selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
+  return cardItem;
 }
 
-export function onErrorStubMarkup(evt) {
+// let currentPage = 1;
+
+// let options = {
+//   root: document.querySelector('#scrollArea'),
+//   rootMargin: '200px',
+//   threshold: 1.0,
+// };
+
+// let observer = new IntersectionObserver(onLoad, options);
+// observer.observe(selectors.target);
+// function onLoad(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       currentPage += 1;
+//       shopCardMarkup(evt);
+//       if (saveCardArr.length) {
+//         observer.unobserve(selectors.target);
+//       }
+//     }
+//   });
+// }
+
+export function onErrorStubMarkup() {
   const stubItem = `<div class="shopping-error-wrap">
       <p class="shopping-error-text">
         This page is empty, add some books and proceed to order.
@@ -82,5 +107,5 @@ export function onErrorStubMarkup(evt) {
         height="198"
       />
     </div>`;
-  sectionShopEl.innerHTML = stubItem;
+  selectors.ShopStubEl.innerHTML = stubItem;
 }

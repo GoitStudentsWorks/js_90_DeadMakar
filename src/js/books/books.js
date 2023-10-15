@@ -1,16 +1,14 @@
 import { categorySelectors } from '../category/category-selectors';
 import { createBookByCategory } from './book-by-category';
+import {makeAllCategoriesContent} from './all-category-content'
+import { booksSelectors } from './books-selectors';
+import { openAllCategoryHandle } from './book-by-category';
 
-// makeAllCategoriesContent();
 
-// categorySelectors.allCategory.addEventListener(
-//   'click',
-//   makeAllCategoriesContent
-// );
+makeAllCategoriesContent();
 
-// createBookByCategory();
 
 categorySelectors.categoryList.addEventListener('click', createBookByCategory);
-// categorySelectors.categoryItemAll.forEach(item => {
-//   item.addEventListener('click', createBookByCategory);
-// });
+
+booksSelectors.onlyBooksContent.addEventListener('click', openAllCategoryHandle)
+

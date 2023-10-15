@@ -4,5 +4,6 @@ export const booksSelectors = {
   categoryOfBooks: document.querySelector('.category-box'),
   allCategoryNameBold: document.querySelector('.category-name-bold'),
   bookName: document.querySelector('.book-name'),
-  btnGategoryBooks: document.querySelector('.btn-book-open-category'),
+  btnGategoryBooks: document.querySelectorAll('.btn-book-open-category'),
+  onlyBooksContent: document.querySelector(".only-books-content"),
 };

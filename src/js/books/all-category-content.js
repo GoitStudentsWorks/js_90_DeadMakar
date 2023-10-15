@@ -8,16 +8,7 @@ import Notiflix from 'notiflix';
 
 export async function makeAllCategoriesContent() {
   try {
-    booksSelectors.allCategoryName.innerHTML =
-      'Best Sellers <span class ="category-name-bold">Books</span>';
-    categorySelectors.allCategory.classList.add('category-active');
-    const bestBooksData = await getBestBook();
-
-    const bestBookMarkup = getMarkupBestBooks(bestBooksData);
-    booksSelectors.booksContainer.insertAdjacentHTML(
-      'beforeend',
-      bestBookMarkup
-    );
+    showAllCategories()
 
     //     if (darkTheme) {
     //         booksSelectors.allCategoryName.classList.add('all-category-name-dark-theme');
@@ -35,3 +26,20 @@ export async function makeAllCategoriesContent() {
     Notiflix.Notify.info('Sorry, no books found..');
   }
 }
+
+
+
+export async function showAllCategories() {
+  booksSelectors.allCategoryName.innerHTML =
+      'Best Sellers <span class ="category-name-bold">Books</span>';
+    categorySelectors.allCategory.classList.add('category-active');
+    const bestBooksData = await getBestBook();
+
+    const bestBookMarkup = getMarkupBestBooks(bestBooksData);
+    booksSelectors.onlyBooksContent.insertAdjacentHTML(
+      'beforeend',
+      bestBookMarkup)
+}
+
+
+

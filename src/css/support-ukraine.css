@@ -47,6 +47,11 @@
   filter: brightness(0) invert(1);
 }
 
+
+=======
+.container-support {
+}
+
 .container-title-supp {
   display: flex;
   flex-direction: row;
@@ -109,8 +114,10 @@
   transform: rotate(90deg);
   stroke: #4f2ee8;
   padding: 3px 3px 3px 3px;
+
   stroke-linecap: round;
   stroke-linejoin: round;
+
 }
 
 @media screen and (min-width: 768px) {

@@ -1,15 +1,17 @@
-import { getAndDisplayBookById } from './modal-bookmarkup';
+import { fetchBookById } from './modal-api';
 
-const list = document.querySelector('.category-list');
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('click', async function (event) {
+    const closestLi = event.target.closest('li.book-card' || 'li.book-item');
 
-list.addEventListener('click', async event => {
-  if (event.target.classList.contains('category-item')) {
-    const bookId = event.target.dataset.id;
+    if (closestLi) {
+      const bookId = closestLi.dataset.id;
 
-    try {
-      await getAndDisplayBookById(bookId);
-    } catch (error) {
-      console.error('Error handling click event:', error);
+      try {
+        const bookData = await fetchBookById(bookId);
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
-  }
+  });
 });
