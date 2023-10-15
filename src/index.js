@@ -4,3 +4,4 @@ import './js/category/category';
 import './js/support-ukraine/support-ukraine';
 import './js/books/books';
 import './js/modal/modal-main';
+import './js/btn-scroll';
