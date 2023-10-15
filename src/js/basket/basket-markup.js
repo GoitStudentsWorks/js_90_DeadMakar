@@ -1,14 +1,14 @@
 import { selectors } from './basket-selectors';
 
-export function shopCardMarkup(evt) {
-  const cardItem = evt
+export function shopCardMarkup(bookData) {
+  const cardItem = bookData
     .map(() => {
       `<li class="shopping-item">
           <div class="shopping-list-item">
             <div class="shopping-book-overlay">
               <img
                 class="shopping-book-img"
-                src="${book_image}"
+                src="${bookData.book_image}"
                 alt="book"
                 width="100"
                 height="142"
@@ -18,7 +18,7 @@ export function shopCardMarkup(evt) {
             </div>
 
             <div class="shopping-item-container">
-              <h3 class="${title}</h3>
+              <h3 class="${bookData.title}</h3>
 
               <p class="shopping-book-category-text">${list_name}</p>
 
@@ -26,7 +26,7 @@ export function shopCardMarkup(evt) {
               ${description}
               </p>
 
-              <p class="shopping-book-author">${author}</p>
+              <p class="shopping-book-author">${bookData.author}</p>
 
               <div class="shopping-link-wrap">
                 <a
@@ -69,6 +69,7 @@ export function shopCardMarkup(evt) {
     })
     .join('');
   selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
+  return cardItem;
 }
 
 // let currentPage = 1;
