@@ -25,17 +25,3 @@ export function addLinkShop(bookData) {
   appleBookLinkRef.setAttribute('href', appleBook);
 }
 
-export async function getAndDisplayBookById(bookId) {
-  try {
-    const bookData = await fetchBookById(bookId);
-    const bookMarkup = generateBookMarkup(bookData);
-
-    modalContainer.innerHTML = bookMarkup;
-  } catch (error) {
-    console.error(
-      `Error fetching and displaying book with ID ${bookId}:`,
-      error
-    );
-    throw error;
-  }
-}
