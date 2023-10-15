@@ -7,9 +7,11 @@ const appleBookLinkRef = document.querySelector('.modal-applebook-link');
 export function generateBookMarkup(bookData) {
   const testMarkup = `
     <img class="modal-book-image" src="${bookData.book_image}" alt="${bookData.title}" />
+    <div class="modal-box">
     <h3 class="modal-book-title">${bookData.title}</h3>
     <p class="modal-author">Author: ${bookData.author}</p>
     <p class="modal-description">${bookData.description}</p>
+    </div>
   `;
   modalContainer.innerHTML = testMarkup;
 }

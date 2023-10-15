@@ -1,6 +1,8 @@
+
 import { shopCardMarkup } from './basket-markup';
 import { onErrorStubMarkup } from './basket-markup';
 import { selectors } from './basket-selectors';
+
 // import { STORED_BOOKS } from '../modal/modal-local-storage';
 
 // selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
