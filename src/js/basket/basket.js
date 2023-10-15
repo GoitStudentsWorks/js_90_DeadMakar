@@ -1,29 +1,59 @@
-import { Axios } from 'axios';
-const ulShopEl = document.querySelector('.shopping-list-container');
-const sectionShopEl = document.querySelector('.shopping-list-section');
-// const KEY = 'feedback-form-state';
-// let formData = JSON.parse(localStorage.getItem(KEY)) || {};
+// import { shopCardMarkup } from './basket-markup';
+// import { onErrorStubMarkup } from './basket-markup';
+// import { selectors } from './basket-selectors';
+import { STORED_BOOKS } from '../modal/modal-local-storage';
 
-// populateForm();
+// selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
+// const STORED_BOOKS = 'storedBooks';
 
-// function saveFormValue(evt) {
-//   formData[evt.target.name] = evt.target.value;
+onGetLocalArr();
 
-//   localStorage.setItem(KEY, JSON.stringify(formData));
+function onGetLocalArr() {
+  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks'));
+  console.log(saveCardArr);
+
+  try {
+    if (saveCardArr.length === 0) {
+      onErrorStubMarkup(saveCardArr);
+    }
+
+    shopCardMarkup(saveCardArr);
+
+    onRemoveCard(saveCardArr);
+  } catch (error) {
+    // onErrorStubMarkup(saveCardArr);
+  }
+}
+
+function onRemoveCard(evt) {
+  let removeArr = evt;
+  const cardTarget = evt.currentTarget;
+  const cardIndex = evt.indexOf(cardTarget);
+  const removeIndex = evt.splice(cardIndex, 1);
+
+  localStorage.setItem(STORED_BOOKS, JSON.stringify(removeArr));
+}
+
+// listItem.addEventListener("onclick", function(e) {
+//   remove(e.target);
+//   //функция получит в качестве аргумента объект по которому кликнули
+// });
+// function remove(o) {
+//   // для удаления нужного нам элемента используем свойство объекта в котором хранится индекс
+//   arrayForSort.splice(o.indexOfLi, 1);
 // }
 
-function onGetLocalArr({
-  id,
-  list_name,
-  book_image,
-  description,
-  author,
-  title,
-}) {
-  const saveCart = JSON.parse(localStorage.getItem(STOREDBOOKS));
+// function removeBook(currentBook) {
+//     try {
+//       const getQueueFromStorage = localStorage.getItem("'QueueBook")
+//       const getQueueArray = JSON.parse(getQueueFromStorage)
 
-  // if (saveCart) {
-  //   // emailEl.value = saveMessage.email || '';
-  //   // textareaEl.value = saveMessage.message || '';
-  // }
-}
+//       const queueBookIndex = getQueueArray.findIndex(value => value.id === currentBook.id);
+//       getQueueArray.splice(queueBookIndex, 1)
+//       localStorage.setItem("QueueBook", JSON.stringify(getQueueArray))
+
+//   } catch (error) {
+//     // console.error(' error: ', error.message);
+//   }
+// }
+// /

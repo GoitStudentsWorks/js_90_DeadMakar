@@ -1,9 +1,12 @@
-import { categorySelectors } from "../category/category-selectors";
-import { makeAllCategoriesContent } from "./all-category-content";
+import { categorySelectors } from '../category/category-selectors';
+import { createBookByCategory } from './book-by-category';
+import {makeAllCategoriesContent} from './all-category-content'
 
 
 
+makeAllCategoriesContent();
 
-makeAllCategoriesContent()
 
-categorySelectors.allCategory.addEventListener('click', makeAllCategoriesContent)
+categorySelectors.categoryList.addEventListener('click', createBookByCategory);
+
+// Need to make listener on the btn

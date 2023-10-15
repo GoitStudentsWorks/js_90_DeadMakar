@@ -1,6 +1,7 @@
 .books-section {
   margin-top: 40px;
 }
+
 .books-container {
   max-width: 375px;
   padding-left: 20px;
@@ -51,6 +52,8 @@
 .book-card {
   width: 335px;
   height: 535px;
+
+  cursor: pointer;
 }
 .photo-card {
   width: 335px;
@@ -237,4 +240,7 @@
     width: 180px;
     margin-bottom: 0;
   }
+}
+.book-by-category {
+  display: block;
 }

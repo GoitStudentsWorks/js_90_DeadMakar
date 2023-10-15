@@ -1,61 +1,86 @@
 <section class="modal-section">
-  <svg class="icon-x-close" width="24" height="24">
-    <use href="./img/icons/symbol-defs.svg#icon-x-close"></use>
-  </svg>
-  <div class="books">
-    <h3 class="books-name"></h3>
-    <p class="name"></p>
-  </div>
-  <p class="description"></p>
-  <div class="information">
-    <picture>
-      <source
-        srcset="./img/images/amazon-1x.png 1x, ./img/images/amazon-2x.png 2x"
-        media="(min-width: 1200px)"
-      />
-      <source
-        srcset="./img/images/amazon-1x.png 1x, ./img/images/amazon-2x.png 2x"
-        media="(min-width: 768px)"
-      />
-      <source
-        srcset="./img/images/amazon-1x.png 1x, ./img/images/amazon-2x.png 2x"
-        media="(max-width: 768px)"
-      />
+  <div class="modal-container">
+    <svg class="modal-icon-x-close" width="24" height="24">
+      <use href="./img/icons/symbol-defs.svg#icon-x-close"></use>
+    </svg>
+    <div class="modal-information"></div>
 
-      <img
-        class="amazon"
-        src="./img/images/amazon-1x.png"
-        alt="amazon"
-        width="62"
-        height="19"
-      />
-    </picture>
+    <div class="modal-links">
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        class="modal-amazon-link"
+      >
+        <picture>
+          <source
+            srcset="
+              ./img/images/amazon-1x.png 1x,
+              ./img/images/amazon-2x.png 2x
+            "
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="
+              ./img/images/amazon-1x.png 1x,
+              ./img/images/amazon-2x.png 2x
+            "
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="
+              ./img/images/amazon-1x.png 1x,
+              ./img/images/amazon-2x.png 2x
+            "
+            media="(max-width: 768px)"
+          />
+          <img
+            class="amazon"
+            src="./img/images/amazon-1x.png"
+            alt="amazon"
+            width="62"
+            height="19"
+          />
+        </picture>
+      </a>
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        class="modal-applebook-link"
+      >
+        <picture>
+          <source
+            srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+            media="(max-width: 768px)"
+          />
+          <img
+            class="modal-img-book"
+            src="./img/images/book-1x.png"
+            alt="book"
+            width="32"
+            height="32"
+          />
+        </picture>
+      </a>
+    </div>
 
-    <picture>
-      <source
-        srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
-        media="(min-width: 1200px)"
-      />
-      <source
-        srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
-        media="(min-width: 768px)"
-      />
-      <source
-        srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
-        media="(max-width: 768px)"
-      />
-
-      <img
-        class="img-book"
-        src="./img/images/book-1x.png"
-        alt="book"
-        width="32"
-        height="32"
-      />
-    </picture>
-  </div>
-  <div class="hallo">
-    <button class="btn-books">hallo</button>
-    <p></p>
+    <div class="Add-to-shopping-list">
+      <button class="modal-btn-books">Add to shopping list</button>
+      <div class="modal-tex-meseg">
+        <p class="modal-message">
+          Сongratulations! You have added the book to the shopping list. To
+          delete, press the button “Remove from the shopping list”.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
