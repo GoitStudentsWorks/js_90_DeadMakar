@@ -157,7 +157,7 @@ const themePreference = () => {
 document.addEventListener(
   'DOMContentLoaded',
   e => {
-    console.clear();
+    // console.clear();
 
     const userThemePreference = themePreference();
     const toggle = document.querySelector('[js-toggle]');
