@@ -139,9 +139,36 @@
 }
 
 .overlay-content {
+  margin-top: 247px;
+  /* position: relative; */
   display: flex;
+  justify-content: center;
 }
+
 .header-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 17px;
+}
+.burger-home-text {
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28; /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+.shoping-menu-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+.shopping-icon-burger {
+  fill: #fff;
 }
 @media only screen and (min-width: 768px) {
   .switch {
