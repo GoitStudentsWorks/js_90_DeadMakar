@@ -23,24 +23,24 @@ function onGetLocalArr() {
   }
 }
 
-selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
-onRemoveCard(cardArr);
+// selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
+// onRemoveCard(cardArr);
 
-function onRemoveCard(evt) {
-  console.log(evt);
-  let removeArr = evt;
-  const cardTarget = evt.target.Dataset[id];
-  const idElement = cardArr.find(cardTarget).indexOf();
-  const or = cardArr.splice(idElement, 1);
-  localStorage.setItem(KEY, JSON.stringify(cardArr));
-  shopCardMarkup(cardArr);
+// function onRemoveCard(evt) {
+//   console.log(evt);
+//   let removeArr = evt;
+//   const cardTarget = evt.target.Dataset[id];
+//   const idElement = cardArr.find(cardTarget).indexOf();
+//   const or = cardArr.splice(idElement, 1);
+//   localStorage.setItem(KEY, JSON.stringify(cardArr));
+//   shopCardMarkup(cardArr);
 
-  // const cardIndex = evt.indexOf(cardTarget);
-  // console.log(cardIndex);
-  // const removeIndex = evt.splice(cardIndex, 1);
+//   // const cardIndex = evt.indexOf(cardTarget);
+//   // console.log(cardIndex);
+//   // const removeIndex = evt.splice(cardIndex, 1);
 
-  localStorage.setItem(KEY, JSON.stringify(removeArr));
-}
+//   localStorage.setItem(KEY, JSON.stringify(removeArr));
+// }
 
 // listItem.addEventListener("onclick", function(e) {
 //   remove(e.target);
