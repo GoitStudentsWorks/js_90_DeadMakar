@@ -1,23 +1,156 @@
-const container = document.querySelector('.container-ul-supp');
-const scrollButton = document.querySelector('.supp-btn');
-const itemsToShow = 6;
-const totalItems = document.querySelectorAll('.supp-li').length;
-let startIndex = 0;
+const fondsList = document.getElementById('fonds-list');
+const suppBtn = document.querySelector('.supp-btn');
 
-scrollButton.addEventListener('click', () => {
-  startIndex += itemsToShow;
-  updateVisibility();
-});
+const fonds = [
+  {
+    title: 'Save the Children',
+    url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+    img: 'img/images/save-the-children-1x.png',
+    img2x: 'img/images/save-the-children-2x.png',
+    width: 129,
+    height: 32,
+  },
+  {
+    title: 'Project HOPE',
+    url: 'https://www.projecthope.org/country/ukraine/',
+    img: 'img/images/project-hope-1x.png',
+    img2x: 'img/images/project-hope-2x.png',
+    width: 62,
+    height: 32,
+  },
+  {
+    title: 'International Medical Corps',
+    url: 'https://internationalmedicalcorps.org/country/ukraine/',
+    img: 'img/images/international-medical-corps-1x.png',
+    img2x: 'img/images/international-medical-corps-2x.png',
+    width: 103,
+    height: 32,
+  },
+  {
+    title: 'RAZOM',
+    url: 'https://www.razomforukraine.org/',
+    img: 'img/images/razom-1x.png',
+    img2x: 'img/images/razom-2x.png',
+    width: 82,
+    height: 32,
+  },
+  {
+    title: 'Action against hunger',
+    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
+    img: 'img/images/action-against-hunger-1x.png',
+    img2x: 'img/images/action-against-hunger-2x.png',
+    width: 55,
+    height: 32,
+  },
+  {
+    title: 'Serhiy Prytula Charity Foundation',
+    url: 'https://prytulafoundation.org/en',
+    img: 'img/images/sergiy-prytula-1x.png',
+    img2x: 'img/images/sergiy-prytula-2x.png',
+    width: 115,
+    height: 32,
+  },
+  {
+    title: 'Medicins Sans Frontieres',
+    url: 'https://www.msf.org/ukraine',
+    img: 'img/images/medecins-sans-frontieres-1x.png',
+    img2x: 'img/images/medecins-sans-frontieres-2x.png',
+    width: 94,
+    height: 32,
+  },
+  {
+    title: 'World vision',
+    url: 'https://www.wvi.org/emergencies/ukraine',
+    img: 'img/images/world-vision-1x.png',
+    img2x: 'img/images/world-vision-2x.png',
+    width: 85,
+    height: 30,
+  },
+  {
+    title: 'UNITED24',
+    url: 'https://u24.gov.ua/uk',
+    img: 'img/images/united24-1x.png',
+    img2x: 'img/images/united24-2x.png',
+    width: 109,
+    height: 10,
+  },
+];
 
-function updateVisibility() {
-  const listItems = document.querySelectorAll('.supp-li');
-  listItems.forEach((item, index) => {
-    if (index >= startIndex && index < startIndex + itemsToShow) {
-      item.classList.remove('hidden-supp');
-    } else {
-      item.classList.add('hidden-supp');
-    }
-  });
+const itemsPerPage = 6;
+let currentPage = 0;
+let isAnimating = false;
+
+const totalPages = Math.ceil(fonds.length / itemsPerPage);
+
+function createListItem(fond, index) {
+  const listItem = document.createElement('li');
+  const link = document.createElement('a');
+  const image = document.createElement('img');
+
+  const number = (index + 1).toString().padStart(2, '0');
+  const { img, img2x, width, height, url, title } = fond;
+
+  listItem.classList.add('list-item');
+
+  link.href = url;
+  link.target = '_blank';
+
+  if (window.devicePixelRatio > 1) {
+    image.src = img2x || img;
+  } else {
+    image.src = img;
+  }
+  image.style.width = width + 'px';
+  image.style.height = height + 'px';
+  image.alt = title;
+
+  link.appendChild(image);
+
+  listItem.appendChild(document.createTextNode(number + ' '));
+  listItem.appendChild(link);
+
+  return listItem;
 }
 
-updateVisibility();
+function updateList() {
+  const start = currentPage * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  fondsList.innerHTML = '';
+
+  const fragment = document.createDocumentFragment();
+  for (let i = start; i < end; i++) {
+    const adjustedIndex = i % fonds.length;
+    const listItem = createListItem(fonds[adjustedIndex], adjustedIndex);
+    fragment.appendChild(listItem);
+  }
+  fondsList.appendChild(fragment);
+}
+
+function scrollUp() {
+  currentPage = (currentPage - 1 + fonds.length) % fonds.length;
+  updateList();
+}
+
+function scrollDown() {
+  currentPage = (currentPage + 1) % fonds.length;
+  updateList();
+}
+
+suppBtn.addEventListener('click', () => {
+  setTimeout(() => {
+    scrollUp();
+  }, 200);
+});
+
+fondsList.addEventListener('wheel', e => {
+  setTimeout(() => {
+    if (e.deltaY > 0) {
+      scrollDown();
+    } else {
+      scrollUp();
+    }
+  }, 200);
+});
+
+updateList();
