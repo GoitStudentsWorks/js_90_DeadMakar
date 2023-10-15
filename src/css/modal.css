@@ -31,7 +31,7 @@
 
 .modal-book-image {
   text-align: center;
-
+  margin-bottom: 14px;
   align-items: center;
 }
 .modal-book-title {
@@ -103,6 +103,7 @@
     width: 499px;
     height: 64px;
     margin: 0;
+    margin-bottom: 8px;
   }
   .modal-container {
     width: 579px;
@@ -164,6 +165,8 @@
   }
   .modal-links {
     justify-content: center;
+  }
+  .modal-links {
   }
 }
 

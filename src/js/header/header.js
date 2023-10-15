@@ -4,7 +4,7 @@ const btnClose = document.querySelector('#closeBurger');
 btnClose.addEventListener('click', closePopup);
 
 function openPopup() {
-  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('overlay').style.display = 'flex';
   //   document.getElementById('popup').style.display = 'block';
   toggleEl('.overlay');
   toggleEl('#openBurger');
@@ -24,6 +24,24 @@ function closePopup() {
 
   toggleEl('#closeBurger');
 }
+
+// -=-==-=---=-=-=-=-=-=-= SCROLL=-=-=-=-=--=-=-=-=-===
+
+document.addEventListener('DOMContentLoaded', function () {
+  let html = document.querySelector('html');
+  let openBurgerButton = document.querySelector('#openBurger');
+  let closeBurgerButton = document.querySelector('#closeBurger');
+
+  openBurgerButton.addEventListener('click', function () {
+    html.classList.add('unscroll');
+  });
+
+  closeBurgerButton.addEventListener('click', function () {
+    html.classList.remove('unscroll');
+  });
+});
+
+// =--=-=-=-==================================================================
 
 // // функция для установки заданной темы/цветовой схемы
 // function setTheme(themeName) {
@@ -164,17 +182,17 @@ document.addEventListener(
     setTheme();
 
     if (userThemePreference.supports) {
-      addFooter();
+      // addFooter();
     }
 
-    clearStorage.addEventListener(
-      'click',
-      e => {
-        localStorage.removeItem('theme');
-        console.info('local storage cleared');
-      },
-      false
-    );
+    // clearStorage.addEventListener(
+    //   'click',
+    //   e => {
+    //     localStorage.removeItem('theme');
+    //     console.info('local storage cleared');
+    //   },
+    //   false
+    // );
 
     toggle.addEventListener(
       'click',
