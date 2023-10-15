@@ -1,12 +1,9 @@
-export const STORED_BOOKS = 'storedBooks';
+const KEY = 'storedBooks';
 
-export function saveBookToStorage(bookId, bookData) {
-  STORED_BOOKS = JSON.parse(localStorage.getItem('storedBooks')) || {};
+export function saveBookToStorage(bookData) {
+  const storedBooks = JSON.parse(localStorage.getItem(KEY)) || [];
 
-  STORED_BOOKS[bookId] = bookData;
-  localStorage.setItem('storedBooks', JSON.stringify(STORED_BOOKS));
-}
+  storedBooks.push(bookData);
 
-export function getStoredBooks() {
-  return JSON.parse(localStorage.getItem('storedBooks')) || {};
+  localStorage.setItem(KEY, JSON.stringify(storedBooks));
 }
