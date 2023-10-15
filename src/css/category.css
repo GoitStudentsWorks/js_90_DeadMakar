@@ -40,6 +40,12 @@
   letter-spacing: -0.32px;
 
   cursor: pointer;
+  transition: color var(--transition);
+}
+
+.category-item:hover,
+.category-item:focus {
+  color: var(--violet-color);
 }
 
 .dark-category {
