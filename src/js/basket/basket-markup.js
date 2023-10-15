@@ -71,27 +71,27 @@ export function shopCardMarkup(evt) {
   selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
 }
 
-let currentPage = 1;
+// let currentPage = 1;
 
-let options = {
-  root: document.querySelector('#scrollArea'),
-  rootMargin: '200px',
-  threshold: 1.0,
-};
+// let options = {
+//   root: document.querySelector('#scrollArea'),
+//   rootMargin: '200px',
+//   threshold: 1.0,
+// };
 
-let observer = new IntersectionObserver(onLoad, options);
-observer.observe(selectors.target);
-function onLoad(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      currentPage += 1;
-      shopCardMarkup(evt);
-      if (saveCardArr.length) {
-        observer.unobserve(selectors.target);
-      }
-    }
-  });
-}
+// let observer = new IntersectionObserver(onLoad, options);
+// observer.observe(selectors.target);
+// function onLoad(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       currentPage += 1;
+//       shopCardMarkup(evt);
+//       if (saveCardArr.length) {
+//         observer.unobserve(selectors.target);
+//       }
+//     }
+//   });
+// }
 
 export function onErrorStubMarkup() {
   const stubItem = `<div class="shopping-error-wrap">
