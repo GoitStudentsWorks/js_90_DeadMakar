@@ -1,29 +1,26 @@
-
 import { shopCardMarkup } from './basket-markup';
 import { onErrorStubMarkup } from './basket-markup';
 import { selectors } from './basket-selectors';
-
-// import { STORED_BOOKS } from '../modal/modal-local-storage';
-
-// selectors.shopRemoveBtn.addEventListener('click', onRemoveCard);
-// const STORED_BOOKS = 'storedBooks';
+import { KEY } from '../modal/modal-local-storage';
 
 onGetLocalArr();
 
 function onGetLocalArr() {
-  const saveCardArr = JSON.parse(localStorage.getItem('storedBooks')) || [];
-  console.log(saveCardArr);
-
   try {
-    if (saveCardArr.length === 0) {
-      onErrorStubMarkup(saveCardArr);
+    const cardArr = JSON.parse(localStorage.getItem(KEY));
+    console.log(cardArr);
+
+    console.log(cardArr);
+    shopCardMarkup(cardArr);
+    if (cardArr.length === 0) {
+      onErrorStubMarkup(cardArr);
+      return;
     }
 
-    shopCardMarkup(saveCardArr);
-
-    onRemoveCard(saveCardArr);
+    // onRemoveCard(saveCardArr);
   } catch (error) {
-    onErrorStubMarkup(saveCardArr);
+    console.error('Error:', error);
+    // onErrorStubMarkup(saveCardArr);
   }
 }
 
