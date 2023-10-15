@@ -58,6 +58,9 @@
 
   cursor: pointer;
 }
+.book-item {
+  margin-bottom: 40px;
+}
 .photo-card {
   width: 335px;
   height: 485px;
