@@ -1,4 +1,3 @@
-
 const btnBurger = document.querySelector('#openBurger');
 btnBurger.addEventListener('click', openPopup);
 const btnClose = document.querySelector('#closeBurger');
@@ -25,7 +24,7 @@ function closePopup() {
 
   toggleEl('#closeBurger');
 }
-=======
+
 // // функция для установки заданной темы/цветовой схемы
 // function setTheme(themeName) {
 //   localStorage.setItem('theme', themeName);
@@ -322,4 +321,3 @@ document.addEventListener(
 //     );
 //   }
 // }
-
