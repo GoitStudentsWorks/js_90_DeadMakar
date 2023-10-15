@@ -27,19 +27,22 @@
       </nav>
     </div>
     <div class="box-burger">
-
       <label id="switch" class="switch">
         <input type="checkbox" onchange="toggleTheme()" id="slider" />
         <span class="slider round"></span>
-
-      
-     <label class="toggle-theme common-toggle">
-        <input type="checkbox" js-toggle class="toggle__input" aria-label="toggle dark mode"/>
-        <span class="check"></span>
-
       </label>
-      
-<!-- 
+
+      <label class="toggle-theme common-toggle">
+        <input
+          type="checkbox"
+          js-toggle
+          class="toggle__input"
+          aria-label="toggle dark mode"
+        />
+        <span class="check"></span>
+      </label>
+
+      <!-- 
       <label class="header__selection toggle">
         <input js-toggle class="toggle__input" aria-label="toggle dark mode" type="checkbox">
         <span class="toggle__fake"></span>
@@ -61,7 +64,9 @@
   <div class="overlay-content">
     <ul class="header-list">
       <li>
-        <a href="./index.html" class="header-link"><strong>HOME</strong></a>
+        <a href="./index.html" class="header-link current"
+          ><strong>HOME</strong></a
+        >
       </li>
       <li>
         <a href="./shopping-list.html" class="header-link"
