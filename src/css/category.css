@@ -1,5 +1,6 @@
 .category-container {
-  margin-top: 40px;
+  margin-top: 104px;
+  margin-bottom: 40px;
 }
 
 ::-webkit-scrollbar {
@@ -68,6 +69,7 @@
 
 @media screen and (min-width: 768px) {
   .category-container {
+    margin-top: 0;
     width: 337px;
     padding: 0;
   }
