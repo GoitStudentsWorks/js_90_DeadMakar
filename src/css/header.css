@@ -107,7 +107,8 @@
 
 /* .switch {
   margin: 14px;
-}
+} */
+/* -----------------------------BURGER=---------------============= */
 .header {
   position: sticky;
   z-index: 3;
@@ -146,7 +147,7 @@
   .switch {
     margin: none;
   }
-} */
+}
 
 .burger-icon {
   display: initial;
