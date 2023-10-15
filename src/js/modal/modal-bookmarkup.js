@@ -1,5 +1,3 @@
-import { fetchBookById } from './modal-api';
-
 const modalInformation = document.querySelector('.modal-information');
 const conteinerImg = document.querySelector('.conteinerImg');
 const amazonLinkRef = document.querySelector('.modal-amazon-link');
@@ -31,5 +29,5 @@ export function addLinkShop(bookData) {
 
   amazonLinkRef.setAttribute('href', amazon);
   appleBookLinkRef.setAttribute('href', appleBook);
-  return amazon, appleBook;
+  return { amazon, appleBook };
 }
