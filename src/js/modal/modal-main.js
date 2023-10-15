@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         currentBookData = await fetchBookById(bookId);
         generateBookMarkup(currentBookData);
         openModal();
-        console.log(currentBookData);
 
         const storedBooks =
           JSON.parse(localStorage.getItem('storedBooks')) || [];
