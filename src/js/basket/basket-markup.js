@@ -108,27 +108,27 @@ export function shopCardMarkup(bookData) {
   selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
 }
 
-let currentPage = 1;
+// let currentPage = 1;
 
-let options = {
-  root: document.querySelector('#scrollArea'),
-  rootMargin: '200px',
-  threshold: 1.0,
-};
+// let options = {
+//   root: document.querySelector('#scrollArea'),
+//   rootMargin: '200px',
+//   threshold: 1.0,
+// };
 
-let observer = new IntersectionObserver(onLoad, options);
-observer.observe(selectors.targetEl);
-function onLoad(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      currentPage += 1;
-      shopCardMarkup(evt);
-      if (saveCardArr.length) {
-        observer.unobserve(selectors.targetEl);
-      }
-    }
-  });
-}
+// let observer = new IntersectionObserver(onLoad, options);
+// observer.observe(selectors.targetEl);
+// function onLoad(entries, observer) {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       currentPage += 1;
+//       shopCardMarkup(evt);
+//       if (saveCardArr.length) {
+//         observer.unobserve(selectors.targetEl);
+//       }
+//     }
+//   });
+// }
 
 export function onErrorStubMarkup() {
   const stubItem = `<li class="shopping-error-wrap">

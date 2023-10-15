@@ -23,16 +23,21 @@ function onGetLocalArr() {
   }
 }
 
-// selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
+selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
 onRemoveCard(cardArr);
 
 function onRemoveCard(evt) {
   console.log(evt);
   let removeArr = evt;
-  const cardTarget = evt.currentTarget;
-  console.log(cardTarget);
-  const cardIndex = evt.indexOf(cardTarget);
-  const removeIndex = evt.splice(cardIndex, 1);
+  const cardTarget = evt.target.Dataset[id];
+  const idElement = cardArr.find(cardTarget).indexOf();
+  const or = cardArr.splice(idElement, 1);
+  localStorage.setItem(KEY, JSON.stringify(cardArr));
+  shopCardMarkup(cardArr);
+
+  // const cardIndex = evt.indexOf(cardTarget);
+  // console.log(cardIndex);
+  // const removeIndex = evt.splice(cardIndex, 1);
 
   localStorage.setItem(KEY, JSON.stringify(removeArr));
 }
