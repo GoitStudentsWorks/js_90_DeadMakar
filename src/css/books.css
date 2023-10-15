@@ -48,6 +48,9 @@
 .book-card:not(:first-child) {
   display: none;
 }
+.book-item {
+  cursor: pointer;
+}
 
 .book-card {
   width: 335px;

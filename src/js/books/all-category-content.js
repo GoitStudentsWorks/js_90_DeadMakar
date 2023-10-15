@@ -8,16 +8,7 @@ import Notiflix from 'notiflix';
 
 export async function makeAllCategoriesContent() {
   try {
-    booksSelectors.allCategoryName.innerHTML =
-      'Best Sellers <span class ="category-name-bold">Books</span>';
-    categorySelectors.allCategory.classList.add('category-active');
-    const bestBooksData = await getBestBook();
-
-    const bestBookMarkup = getMarkupBestBooks(bestBooksData);
-    booksSelectors.onlyBooksContent.insertAdjacentHTML(
-      'beforeend',
-      bestBookMarkup
-    );
+    showAllCategories()
 
     //     if (darkTheme) {
     //         booksSelectors.allCategoryName.classList.add('all-category-name-dark-theme');
@@ -37,4 +28,18 @@ export async function makeAllCategoriesContent() {
 }
 
 
-// Need to fix the dark theme css
+
+export async function showAllCategories() {
+  booksSelectors.allCategoryName.innerHTML =
+      'Best Sellers <span class ="category-name-bold">Books</span>';
+    categorySelectors.allCategory.classList.add('category-active');
+    const bestBooksData = await getBestBook();
+
+    const bestBookMarkup = getMarkupBestBooks(bestBooksData);
+    booksSelectors.onlyBooksContent.insertAdjacentHTML(
+      'beforeend',
+      bestBookMarkup)
+}
+
+
+

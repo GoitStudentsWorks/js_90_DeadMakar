@@ -20,7 +20,7 @@ const maxBookNameLength = 16;
                   )
                   .join('')}
             </ul>
-            <button class="btn-book-open-category">see more</button>
+            <button class="btn-book-open-category" data-title="${item.list_name}">see more</button>
         </div>
         `;
     })
@@ -28,6 +28,8 @@ const maxBookNameLength = 16;
 
   return markup;
 }
+
+
 
 export function getMarkupByCategory(data) {
   const maxBookNameLength = 16;
