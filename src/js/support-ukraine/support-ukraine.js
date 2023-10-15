@@ -155,8 +155,8 @@ suppBtn.addEventListener('click', () => {
     firstClick = false;
 
     resetFonds();
+  }
 
-  } 
 
   setTimeout(() => {
     if (clickCount === 1) {

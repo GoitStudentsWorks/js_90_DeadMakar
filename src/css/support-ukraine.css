@@ -91,6 +91,9 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.support-container {
+  background-color: transparent;
+}
 @media only screen and (min-width: 768px) {
   .fonds-container {
     max-width: 335px;
@@ -120,8 +123,5 @@
   }
   .supp-arrow {
     padding: 2px 2px 2px 2px;
-  }
-  .support-container {
-    background-color: transparent;
   }
 }
