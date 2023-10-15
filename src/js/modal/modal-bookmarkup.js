@@ -28,21 +28,9 @@ export function addLinkShop(bookData) {
   const appleBook = bookData.buy_links.find(
     link => link.name === 'Apple Books'
   )?.url;
+  console.log(amazon);
   amazonLinkRef.setAttribute('href', amazon);
   appleBookLinkRef.setAttribute('href', appleBook);
+  return amazon, appleBook;
 }
 
-export async function getAndDisplayBookById(bookId) {
-  try {
-    const bookData = await fetchBookById(bookId);
-    const bookMarkup = generateBookMarkup(bookData);
-
-    modalContainer.innerHTML = bookMarkup;
-  } catch (error) {
-    console.error(
-      `Error fetching and displaying book with ID ${bookId}:`,
-      error
-    );
-    throw error;
-  }
-}

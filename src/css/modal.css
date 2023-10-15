@@ -34,6 +34,14 @@
 }
 
 
+
+
+.modal-book-image {
+  text-align: center;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
 .modal-book-title {
   color: #111;
   font-size: 16px;
@@ -110,6 +118,7 @@ display: flex;
     width: 499px;
     height: 64px;
     margin: 0;
+    margin-bottom: 8px;
   }
   .modal-container {
     width: 579px;
@@ -171,6 +180,8 @@ display: flex;
   }
   .modal-links {
     justify-content: center;
+  }
+  .modal-links {
   }
 }
 
