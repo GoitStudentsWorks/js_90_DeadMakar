@@ -46,8 +46,12 @@
   filter: grayscale(100%);
   filter: brightness(0) invert(1);
 }
+
+
+=======
 .container-support {
 }
+
 .container-title-supp {
   display: flex;
   flex-direction: row;
@@ -73,8 +77,7 @@
   justify-content: start;
   align-items: start;
 }
-.support-img {
-}
+
 .title-Ukr {
   font-size: 22px;
   color: #fff;
@@ -104,10 +107,17 @@
   justify-content: center;
   align-items: center;
 }
+.hidden-supp {
+  display: none;
+}
 .supp-arrow {
   transform: rotate(90deg);
   stroke: #4f2ee8;
   padding: 3px 3px 3px 3px;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
 }
 
 @media screen and (min-width: 768px) {
