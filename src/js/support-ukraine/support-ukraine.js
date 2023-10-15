@@ -138,6 +138,13 @@ function resetFonds() {
 
 function scrollUp() {
   currentPage = (currentPage - 1 + fonds.length) % fonds.length;
+  fondsList.classList.add('smooth-slide-up');
+  updateList();
+}
+
+function scrollDown() {
+  currentPage = (currentPage + 1) % fonds.length;
+  fondsList.classList.add('smooth-slide-down');
   updateList();
 }
 
@@ -148,19 +155,14 @@ suppBtn.addEventListener('click', () => {
     firstClick = true;
     suppBtn.style.transition = 'transform 0.3s ease';
     suppBtn.style.transform = 'rotate(270deg)';
+    scrollUp();
   } else if (clickCount === 2) {
     suppBtn.style.transition = 'transform 0.3s ease';
     suppBtn.style.transform = 'rotate(90deg)';
     clickCount = 0;
     firstClick = false;
-    resetFonds();
+    scrollDown();
   }
-
-  setTimeout(() => {
-    if (clickCount === 1) {
-      scrollUp();
-    }
-  }, 200);
 });
 
 updateList();
