@@ -101,8 +101,16 @@
   border: 2px solid #4f2ee8;
   margin-bottom: 8px;
   margin-left: 38px;
+  text-transform: uppercase;
 }
-.modal-message {
+
+.modal-btn-books:hover,
+.modal-btn-books:focus {
+  background: var(--violet-color);
+  color: var(--white-color);
+}
+
+.modal .modal-message {
   color: rgba(17, 17, 17, 0.5);
 
   text-align: center;
@@ -184,11 +192,11 @@
   }
 }
 
-@media screen and (min-width: 768px){
-.modal-book-image {
+@media screen and (min-width: 768px) {
+  .modal-book-image {
     width: 192px;
     height: 281px;
-}
+  }
 }
 
 @media screen and (min-width: 1440px) {
