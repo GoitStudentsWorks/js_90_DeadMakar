@@ -195,13 +195,14 @@
 
 @media screen and (min-width: 1280px) {
   .books-container {
-    max-width: 996px;
+    max-width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+    margin-left: 40px;
   }
 
   .books-section {
-    margin-top: 40px;
+    margin-top: 0px;
   }
   .category-box {
     width: 996px;

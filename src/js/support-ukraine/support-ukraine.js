@@ -161,8 +161,20 @@ suppBtn.addEventListener('click', () => {
     suppBtn.style.transform = 'rotate(90deg)';
     clickCount = 0;
     firstClick = false;
+
     scrollDown();
   }
+
+
+    resetFonds();
+  }
+
+
+  setTimeout(() => {
+    if (clickCount === 1) {
+      scrollUp();
+    }
+
 });
 
 updateList();
