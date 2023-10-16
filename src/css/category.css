@@ -14,7 +14,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: #e0e0e0;
+  background: var(--pop-up-background);
   width: 8px;
   height: 114px;
 }
@@ -34,7 +34,7 @@
 }
 
 .category-item {
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--rep-category-text);
   width: 307px;
   font-size: 16px;
   line-height: 1.125;
@@ -46,11 +46,11 @@
 
 .category-item:hover,
 .category-item:focus {
-  color: var(--violet-color);
+  color: var(--rep-category-text-activ);
 }
 
 .category-active {
-  color: var(--violet-color);
+  color: var(--rep-category-text-activ);
   font-weight: 700;
   text-transform: uppercase;
 }
