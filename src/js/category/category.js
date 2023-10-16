@@ -7,12 +7,6 @@ import { categoryMarkup } from './category-markup';
     const categoryData = await getBookCategory();
     const markup = categoryMarkup(categoryData);
     categorySelectors.categoryList.insertAdjacentHTML('beforeend', markup);
-
-    //     if (theme === isDark) {
-    //          categorySelectors.categoryItem.classList.add('dark-category')
-    //  categorySelectors.categoryContainer.classList.add(category-dark)
-    //     categorySelectors.activeCategory.classList.add(active-dark-category)
-    //     }
   } catch (error) {
     console.log(error);
   }

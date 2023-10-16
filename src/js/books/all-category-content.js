@@ -9,19 +9,6 @@ import Notiflix from 'notiflix';
 export async function makeAllCategoriesContent() {
   try {
     showAllCategories()
-
-    //     if (darkTheme) {
-    //         booksSelectors.allCategoryName.classList.add('all-category-name-dark-theme');
-    //             booksSelectors.allCategoryNameBold.classList.add('category-name-bold-dark-theme');
-    //         booksSelectors.bookName.classList.add('book-name-dark-theme');
-    // booksSelectors.btnGategoryBooks.classList.add('btn-book-open-category-dark-theme')
-    //         }
-    //         else if (!darkTheme) {
-    //         booksSelectors.allCategoryName.classList.remove('all-category-name-dark-theme');
-    //             booksSelectors.allCategoryNameBold.classList.remove('category-name-bold-dark-theme');
-    //         booksSelectors.bookName.classList.remove('book-name-dark-theme');
-    // booksSelectors.btnGategoryBooks.classList.remove('btn-book-open-category-dark-theme')
-    //         }
   } catch (error) {
     Notiflix.Notify.info('Sorry, no books found..');
   }
