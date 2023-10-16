@@ -22,46 +22,31 @@ function onGetLocalArr() {
     );
   }
 }
+selectors.ShopUlEl.addEventListener('click', onRemoveCard);
 
-// selectors.shopRemoveBtnEl.addEventListener('click', onRemoveCard);
-// onRemoveCard(cardArr);
+export function onRemoveCard(evt) {
+  let dataId = evt.target.dataset.cardId;
+  let removeBtn = evt.target.closest('.shopping-item');
 
-// function onRemoveCard(evt) {
-//   console.log(evt);
-//   let removeArr = evt;
-//   const cardTarget = evt.target.Dataset[id];
-//   const idElement = cardArr.find(cardTarget).indexOf();
-//   const or = cardArr.splice(idElement, 1);
-//   localStorage.setItem(KEY, JSON.stringify(cardArr));
-//   shopCardMarkup(cardArr);
+  if (evt.target.className !== 'shopping-delete-btn') {
+    return;
+  } else {
+    console.log(dataId);
 
-//   // const cardIndex = evt.indexOf(cardTarget);
-//   // console.log(cardIndex);
-//   // const removeIndex = evt.splice(cardIndex, 1);
+    removeBtn.remove();
+    // localStorage.removeItem(KEY);
 
-//   localStorage.setItem(KEY, JSON.stringify(removeArr));
-// }
+    onErrorStubMarkup(cardArr);
+  }
 
-// listItem.addEventListener("onclick", function(e) {
-//   remove(e.target);
-//   //функция получит в качестве аргумента объект по которому кликнули
-// });
-// function remove(o) {
-//   // для удаления нужного нам элемента используем свойство объекта в котором хранится индекс
-//   arrayForSort.splice(o.indexOfLi, 1);
-// }
+  // console.log(evt.target);
+  // if (evt.target.childNodes) {
+  //   const or = evt.target.classList.closest('shopping-delete-btn');
+  //   console.log(or);
+  // }
 
-// function removeBook(currentBook) {
-//     try {
-//       const getQueueFromStorage = localStorage.getItem("'QueueBook")
-//       const getQueueArray = JSON.parse(getQueueFromStorage)
-
-//       const queueBookIndex = getQueueArray.findIndex(value => value.id === currentBook.id);
-//       getQueueArray.splice(queueBookIndex, 1)
-//       localStorage.setItem("QueueBook", JSON.stringify(getQueueArray))
-
-//   } catch (error) {
-//     // console.error(' error: ', error.message);
-//   }
-// }
-// /
+  // let removeArr = evt.dataset;
+  // if (evt.target.classList.contains('shopping-delete-btn')) {
+  //   this.remove();
+  // }
+}

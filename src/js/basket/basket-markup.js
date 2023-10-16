@@ -1,4 +1,5 @@
 import { selectors } from './basket-selectors';
+import { onRemoveCard } from './basket';
 
 export function shopCardMarkup(bookData) {
   const cardItem = bookData
@@ -95,16 +96,15 @@ export function shopCardMarkup(bookData) {
       </div>
     </div>
   </div>
-  <button class="shopping-delete-btn" type="button">
+  <button class="shopping-delete-btn" type="button" data-card-id ="${book._id}">
     <svg class="shopping-delete-btn-icon" width="16" height="16">
-      <use href="./img/icons/symbol-defs.svg#icon-delete"></use>
+      <use class="shopping-icon" href="./img/icons/symbol-defs.svg#icon-delete" ></use>
     </svg>
   </button>
 </li>
 `;
     })
     .join('');
-
   selectors.ShopUlEl.insertAdjacentHTML('beforeend', cardItem);
 }
 
