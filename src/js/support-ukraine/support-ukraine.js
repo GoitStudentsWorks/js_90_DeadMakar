@@ -1,5 +1,5 @@
-import saveTheChildrenImage from './img/images/save-the-children-1x.png';
-import saveTheChildrenImageX from './img/images/save-the-children-2x.png';
+import saveTheChildrenImage from '/src/img/images/save-the-children-1x.png';
+import saveTheChildrenImageX from '/src/img/images/save-the-children-2x.png';
 
 const fondsList = document.getElementById('fonds-list');
 const suppBtn = document.querySelector('.supp-btn');
