@@ -97,6 +97,7 @@
 .modal-btn-books {
   width: 211px;
   height: 46px;
+  color: var(--rep-black);
   border-radius: 40px;
   border: 2px solid var(--violet-color);
   margin-bottom: 8px;
@@ -104,16 +105,14 @@
   text-transform: uppercase;
 }
 
-
 .modal-btn-books:hover,
 .modal-btn-books:focus {
   background: var(--violet-color);
   color: var(--white-color);
 }
-
-.modal .modal-message {
-  color: var(--pop-up-text-activated-batton);
-
+/* .modal  */
+.modal-message {
+  color: var(--rep-pop-up-text-activated-batton);
 
   text-align: center;
   font-size: 10px;
