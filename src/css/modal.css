@@ -88,7 +88,7 @@
 }
 
 .amazon {
-  filter: grayscale(100%);
+  filter: var(--rep-pop-up-amazon);
 }
 .modal-img-book {
   filter: grayscale(100%);
