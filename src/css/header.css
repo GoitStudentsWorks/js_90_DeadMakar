@@ -147,19 +147,16 @@
 .header-link {
   color: var(--white-color);
 }
-
+.shoping-menu-text {
+  color: var(--white-color);
+}
 .unscroll {
   overflow: hidden;
 }
 
 .shoping-text {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
+  color: var(--black-color);
 }
-
 
 .burger-shop-list {
   display: flex;
@@ -168,7 +165,10 @@
 }
 
 .shopping-icon-burger {
-  fill: #fff;
+  fill: var(--white-color);
+}
+.shopping-icon-current {
+  fill: var(--black-color);
 }
 
 .burger-icon {
@@ -271,12 +271,19 @@ input[type='checkbox']:checked ~ .check::after {
   border-radius: 36px;
 }
 .current-burger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-weight: 700;
   color: var(--black-color);
   background-color: var(--yellow-color);
   padding: 8px 16px;
   border-radius: 36px;
 }
-.shopping-icon-current {
-  fill: var(--black-color);
+.shopping-icon {
+  fill: var(--rep-black);
+}
+
+.hed-text {
+  text-transform: uppercase;
 }
