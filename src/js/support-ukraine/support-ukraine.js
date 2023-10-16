@@ -1,4 +1,4 @@
-import 'C: homeworkBookkeepers - Projectsrcimgimagessave - the - children - 1x.png';
+import 'C:homeworkBookkeepers-Projectsrcimgimagessave-the-children-1x.png';
 import 'C:homeworkBookkeepers-Projectsrcimgimagessave-the-children-2x.png';
 
 const fondsList = document.getElementById('fonds-list');
@@ -10,7 +10,7 @@ const initialFonds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: 'C: homeworkBookkeepers - Projectsrcimgimagessave - the - children - 1x.png',
+    img: 'C:homeworkBookkeepers-Projectsrcimgimagessave-the-children-1x.png',
     img2x: 'C:homeworkBookkeepers-Projectsrcimgimagessave-the-children-2x.png',
     width: 129,
     height: 32,
