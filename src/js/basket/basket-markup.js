@@ -113,7 +113,7 @@ export function shopCardMarkup(bookData) {
       </div>
     </div>
   </div>
-  <button class="shopping-delete-btn" type="button" data-card-id ="${book._id}">
+  <button class="shopping-delete-btn" type="button" data-id="${book._id}">
     <svg class="shopping-delete-btn-icon" width="16" height="16">
       <use class="shopping-icon" href="${iconDelete}" ></use>
     </svg>
