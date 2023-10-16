@@ -153,6 +153,7 @@
 
 .shopping-delete-btn-icon {
   stroke: white;
+  pointer-events: none;
 }
 
 .shopping-link-wrap {

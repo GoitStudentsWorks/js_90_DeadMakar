@@ -4,17 +4,19 @@ import { KEY } from '../modal/modal-local-storage';
 import { selectors } from './basket-selectors';
 import Notiflix from 'notiflix';
 
-let cardArr = JSON.parse(localStorage.getItem(KEY)) || [];
+let localCardArr = JSON.parse(localStorage.getItem(KEY)) || [];
+
+selectors.ShopUlEl.addEventListener('click', removeItemCard);
 
 onGetLocalArr();
 
 function onGetLocalArr() {
   try {
-    if (cardArr.length === 0) {
-      onErrorStubMarkup(cardArr);
+    if (localCardArr.length === 0) {
+      onErrorStubMarkup(localCardArr);
       return;
     }
-    shopCardMarkup(cardArr);
+    shopCardMarkup(localCardArr);
   } catch (error) {
     console.error('Error:', error);
     Notiflix.Notify.failure(
@@ -22,32 +24,17 @@ function onGetLocalArr() {
     );
   }
 }
-selectors.ShopUlEl.addEventListener('click', onRemoveCard);
 
-export function onRemoveCard(evt) {
-  let dataId = evt.target.dataset.cardId;
-  let removeBtn = evt.target.closest('.shopping-item');
-
-  if (evt.target.className !== 'shopping-delete-btn') {
+function removeItemCard(clickedItem) {
+  if (clickedItem.target.className != 'shopping-delete-btn') {
     return;
-  } else {
-    console.log(dataId);
-    console.log(evt.target);
-
-    removeBtn.remove();
-    // localStorage.removeItem(KEY);
-
-    onErrorStubMarkup(cardArr);
   }
 
-  // console.log(evt.target);
-  // if (evt.target.childNodes) {
-  //   const or = evt.target.classList.closest('shopping-delete-btn');
-  //   console.log(or);
-  // }
+  let index = localCardArr.findIndex(item => item === clickedItem);
 
-  // let removeArr = evt.dataset;
-  // if (evt.target.classList.contains('shopping-delete-btn')) {
-  //   this.remove();
-  // }
+  localCardArr.splice(index, 1);
+
+  localStorage.setItem(KEY, JSON.stringify(localCardArr));
+
+  window.location.href = '../../shopping-list.html';
 }
