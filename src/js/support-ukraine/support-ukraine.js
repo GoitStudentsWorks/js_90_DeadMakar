@@ -1,5 +1,21 @@
 import saveTheChildrenImage from '../../img/images/save-the-children-1x.png';
 import saveTheChildrenImageX from '../../img/images/save-the-children-2x.png';
+import projectHome from '../../img/images/project-hope-1x.png';
+import projectHomeX from '../../img/images/project-hope-2x.png';
+import internationalMedicalCorps from '../../img/images/international-medical-corps-1x.png';
+import internationalMedicalCorpsX from '../../img/images/international-medical-corps-2x.png';
+import razom from '../../img/images/razom-1x.png';
+import razomX from '../../img/images/razom-2x.png';
+import actionAgainstHunger from '../../img/images/action-against-hunger-1x.png';
+import actionAgainstHungerX from '../../img/images/action-against-hunger-2x.png';
+import serhiyPrytulaCharityFoundation from '../../img/images/sergiy-prytula-1x.png';
+import serhiyPrytulaCharityFoundationX from '../../img/images/sergiy-prytula-2x.png';
+import medicinsSansFrontieres from '../../img/images/medecins-sans-frontieres-1x.png';
+import medicinsSansFrontieresX from '../../img/images/medecins-sans-frontieres-2x.png';
+import worldVision from '../../img/images/world-vision-1x.png';
+import worldVisionX from '../../img/images/world-vision-2x.png';
+import united24 from '../../img/images/united24-1x.png';
+import united24X from '../../img/images/united24-2x.png';
 
 const fondsList = document.getElementById('fonds-list');
 const suppBtn = document.querySelector('.supp-btn');
@@ -18,64 +34,64 @@ const initialFonds = [
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: './img/images/project-hope-1x.png',
-    img2x: './img/images/project-hope-2x.png',
+    img: projectHome,
+    img2x: projectHomeX,
     width: 62,
     height: 32,
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: './img/images/international-medical-corps-1x.png',
-    img2x: './img/images/international-medical-corps-2x.png',
+    img: internationalMedicalCorps,
+    img2x: internationalMedicalCorpsX,
     width: 103,
     height: 32,
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: './img/images/razom-1x.png',
-    img2x: './img/images/razom-2x.png',
+    img: razom,
+    img2x: razomX,
     width: 82,
     height: 32,
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: './img/images/action-against-hunger-1x.png',
-    img2x: './img/images/action-against-hunger-2x.png',
+    img: actionAgainstHunger,
+    img2x: actionAgainstHungerX,
     width: 55,
     height: 32,
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: './img/images/sergiy-prytula-1x.png',
-    img2x: './img/images/sergiy-prytula-2x.png',
+    img: serhiyPrytulaCharityFoundation,
+    img2x: serhiyPrytulaCharityFoundationX,
     width: 115,
     height: 32,
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: './img/images/medecins-sans-frontieres-1x.png',
-    img2x: './img/images/medecins-sans-frontieres-2x.png',
+    img: medicinsSansFrontieres,
+    img2x: medicinsSansFrontieresX,
     width: 94,
     height: 32,
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: './img/images/world-vision-1x.png',
-    img2x: './img/images/world-vision-2x.png',
+    img: worldVision,
+    img2x: worldVisionX,
     width: 85,
     height: 30,
   },
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: './img/images/united24-1x.png',
-    img2x: './img/images/united24-2x.png',
+    img: united24,
+    img2x: united24X,
     width: 109,
     height: 10,
   },
