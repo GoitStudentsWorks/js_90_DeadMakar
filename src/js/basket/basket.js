@@ -26,15 +26,20 @@ function onGetLocalArr() {
 }
 
 function removeItemCard(clickedItem) {
-  if (clickedItem.target.className != 'shopping-delete-btn') {
+  if (!clickedItem.target.classList.contains('shopping-delete-btn')) {
     return;
   }
 
-  let index = localCardArr.findIndex(item => item === clickedItem);
+  const listItem = clickedItem.target.closest('li.shopping-item');
 
-  localCardArr.splice(index, 1);
+  const itemId = clickedItem.target.dataset.id;
 
-  localStorage.setItem(KEY, JSON.stringify(localCardArr));
+  const index = localCardArr.findIndex(item => item._id === itemId);
 
-  window.location.href = '';
+  if (index !== -1) {
+    localCardArr.splice(index, 1);
+    localStorage.setItem(KEY, JSON.stringify(localCardArr));
+
+    window.location.href = '';
+  }
 }
