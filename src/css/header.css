@@ -2,9 +2,6 @@
   .header {
     min-width: 768px;
   }
-  .burger-img {
-    display: none;
-  }
 }
 @media only screen and (min-width: 1440px) {
   .header {
@@ -99,10 +96,6 @@
   gap: 14px;
 }
 
-.shoping-icon {
-  fill: var(--rep-black);
-}
-
 /* -----------------------------BURGER=---------------============= */
 .header {
   position: fixed;
@@ -165,6 +158,13 @@
   line-height: 1.28;
   letter-spacing: -0.56px;
   text-transform: uppercase;
+}
+
+
+.burger-shop-list {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
 }
 
 .shopping-icon-burger {

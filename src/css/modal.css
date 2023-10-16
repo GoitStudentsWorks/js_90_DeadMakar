@@ -101,9 +101,19 @@
   border: 2px solid var(--violet-color);
   margin-bottom: 8px;
   margin-left: 38px;
+  text-transform: uppercase;
 }
-.modal-message {
+
+
+.modal-btn-books:hover,
+.modal-btn-books:focus {
+  background: var(--violet-color);
+  color: var(--white-color);
+}
+
+.modal .modal-message {
   color: var(--pop-up-text-activated-batton);
+
 
   text-align: center;
   font-size: 10px;

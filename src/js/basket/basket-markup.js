@@ -1,5 +1,16 @@
 import { selectors } from './basket-selectors';
-import { onRemoveCard } from './basket';
+
+import oooopsMob1x from '../../img/images/oooops-mob-1x.png';
+import oooopsMob2x from '../../img/images/oooops-mob-2x.png';
+import oooopsTab1x from '../../img/images/oooops-tab-1x.png';
+import oooopsTab2x from '../../img/images/oooops-tab-2x.png';
+
+import amazon1x from '../../img/images/amazon-1x.png';
+import amazon2x from '../../img/images/amazon-2x.png';
+import book1x from '../../img/images/book-1x.png';
+import book2x from '../../img/images/book-2x.png';
+
+import iconDelete from '../../img/icons/symbol-defs.svg#icon-delete';
 
 export function shopCardMarkup(bookData) {
   const cardItem = bookData
@@ -37,28 +48,28 @@ export function shopCardMarkup(bookData) {
           <picture>
             <source
               srcset="
-                ./img/images/amazon-1x.png 1x,
-                ./img/images/amazon-2x.png 2x
+                ${amazon1x},
+                ${amazon2x}
               "
               media="(min-width: 1440px)"
             />
             <source
               srcset="
-                ./img/images/amazon-1x.png 1x,
-                ./img/images/amazon-2x.png 2x
+                ${amazon1x},
+                ${amazon2x}
               "
               media="(min-width: 768px)"
             />
             <source
               srcset="
-                ./img/images/amazon-1x.png 1x,
-                ./img/images/amazon-2x.png 2x
+                ${amazon1x},
+                ${amazon2x}
               "
               media="(max-width: 768px)"
             />
             <img
               class="shopping-img-amazon"
-              src="./img/images/amazon-1x.png"
+              src="${amazon1x}"
               alt="amazon"
               width="32"
               height="11"
@@ -73,20 +84,26 @@ export function shopCardMarkup(bookData) {
         >
           <picture>
             <source
-              srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+              srcset="
+              ${book1x}, 
+              ${book2x}"
               media="(min-width: 1440px)"
             />
             <source
-              srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+              srcset="
+              ${book1x}, 
+              ${book2x}"
               media="(min-width: 768px)"
             />
             <source
-              srcset="./img/images/book-1x.png 1x, ./img/images/book-2x.png 2x"
+              srcset="
+              ${book1x}, 
+              ${book2x}"
               media="(max-width: 768px)"
             />
             <img
               class="shopping-img-book"
-              src="./img/images/book-1x.png"
+              src="${book1x}"
               alt="book"
               width="11"
               height="11"
@@ -98,7 +115,7 @@ export function shopCardMarkup(bookData) {
   </div>
   <button class="shopping-delete-btn" type="button" data-card-id ="${book._id}">
     <svg class="shopping-delete-btn-icon" width="16" height="16">
-      <use class="shopping-icon" href="./img/icons/symbol-defs.svg#icon-delete" ></use>
+      <use class="shopping-icon" href="${iconDelete}" ></use>
     </svg>
   </button>
 </li>
@@ -139,28 +156,28 @@ export function onErrorStubMarkup() {
         <picture>
           <source
             srcset="
-              ./img/images/oooops-tab-1x.png 1x,
-              ./img/images/oooops-tab-2x.png 2x 
+              ${oooopsTab1x},
+              ${oooopsTab2x}
             "
             media="(min-width: 1440px)"
           />
           <source
             srcset="
-              ./img/images/oooops-tab-1x.png 1x,
-              ./img/images/oooops-tab-2x.png 2x
+              ${oooopsTab1x},
+              ${oooopsTab2x}
             "
             media="(min-width: 768px)"
           />
           <source
             srcset="
-              ./img/images/oooops-mob-1x.png 1x,
-              ./img/images/oooops-mob-2x.png 2x
+              ${oooopsMob1x},
+              ${oooopsMob2x}
             "
             media="(max-width: 768px)"
           />
           <img
         class="shopping-error-img"
-        src="./img/images/oooops-mob-1x.png"
+        src="${oooopsMob1x}"
         alt="books"
         width="265"
         height="198"
