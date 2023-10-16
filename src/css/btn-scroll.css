@@ -11,6 +11,7 @@
    background-color: var(--violet-color);
    opacity: 1;
    bottom: 10px;
+   z-index: 99;
 }
 
 

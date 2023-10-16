@@ -9,7 +9,9 @@ let currentBookData = []; // Зробили змінну глобальною
 
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', async function (event) {
-    const closestLi = event.target.closest('li.book-item');
+    const closestLi =
+      event.target.closest('li.book-item') ||
+      event.target.closest('li.book-card');
 
     if (closestLi) {
       const bookId = closestLi.dataset.id;
@@ -19,60 +21,30 @@ document.addEventListener('DOMContentLoaded', function () {
         generateBookMarkup(currentBookData);
         openModal();
 
-        const storedBooks =
-          JSON.parse(localStorage.getItem('storedBooks')) || [];
-        const isBookInStorage = storedBooks.some(
-          book => book._id === currentBookData._id
-        );
+        updateButtonsVisibility();
 
-        if (!isBookInStorage) {
-          buttonAddToBasket.addEventListener('click', function () {
-            addToLocalStorage(currentBookData);
-          });
-        } else {
-          // Book is already in storage
-          buttonAddToBasket.classList.add('visually-hidden');
-          buttonRemoveToBasket.classList.remove('visually-hidden');
-          greetMessage.classList.remove('visually-hidden');
-        }
+        // Check if the book is in storage and update button visibility
+        buttonAddToBasket.addEventListener('click', handleAddToBasketClick);
+        buttonRemoveToBasket.addEventListener(
+          'click',
+          handleRemoveFromBasketClick
+        );
       } catch (error) {
         console.error('Error:', error);
       }
     }
   });
+  // Function to handle the "Add to Shopping List" button click
+  function handleAddToBasketClick() {
+    addToLocalStorage(currentBookData);
+    updateButtonsVisibility();
+  }
 
-  document.addEventListener('click', async function (event) {
-    const closestLi = event.target.closest('li.book-card');
-
-    if (closestLi) {
-      const bookId = closestLi.dataset.id;
-
-      try {
-        currentBookData = await fetchBookById(bookId);
-        generateBookMarkup(currentBookData);
-        openModal();
-
-        const storedBooks =
-          JSON.parse(localStorage.getItem('storedBooks')) || [];
-        const isBookInStorage = storedBooks.some(
-          book => book._id === currentBookData._id
-        );
-
-        if (!isBookInStorage) {
-          buttonAddToBasket.addEventListener('click', function () {
-            addToLocalStorage(currentBookData);
-          });
-        } else {
-          // Book is already in storage
-          buttonAddToBasket.classList.add('visually-hidden');
-          buttonRemoveToBasket.classList.remove('visually-hidden');
-          greetMessage.classList.remove('visually-hidden');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-  });
+  // Function to handle the "Remove from Shopping List" button click
+  function handleRemoveFromBasketClick() {
+    removeBookFromStorage(currentBookData);
+    updateButtonsVisibility();
+  }
 
   const closeIcon = document.querySelector('.modal-icon-x-close');
   closeIcon.addEventListener('click', closeModal);
@@ -132,6 +104,18 @@ async function addToLocalStorage(bookData) {
 
   // Book is added to storage, update buttons
   updateButtonsVisibility();
+}
+
+async function removeBookFromStorage(bookData) {
+  const storedBooks = JSON.parse(localStorage.getItem('storedBooks')) || [];
+  const indexToRemove = storedBooks.findIndex(
+    book => book._id === bookData._id
+  );
+
+  if (indexToRemove !== -1) {
+    storedBooks.splice(indexToRemove, 1);
+    localStorage.setItem('storedBooks', JSON.stringify(storedBooks));
+  }
 }
 
 function updateButtonsVisibility() {

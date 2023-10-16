@@ -4,15 +4,21 @@ import { booksSelectors } from './books-selectors';
 import { categorySelectors } from '../category/category-selectors';
 import { showAllCategories } from './all-category-content';
 import Notiflix from 'notiflix';
+import { contentLoader } from './loader';
+
+
 export async function createBookByCategory(event) {
   try {
     if (event.target.textContent === 'All categories') {
+
       booksSelectors.onlyBooksContent.innerHTML = '';
       const categoryItems = document.querySelectorAll('.category-item');
       categoryItems.forEach(item => {
         item.classList.remove('category-active');
       });
+      contentLoader()
       showAllCategories();
+
     } else if (!event.target.classList.contains('category-item')) {
       return;
     } else {
