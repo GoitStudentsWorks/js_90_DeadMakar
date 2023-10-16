@@ -1,14 +1,17 @@
+import 192x192 from "/src/img/favicon/android-chrome-192x192.png"
+import 512x512 from "/src/img/favicon/android-chrome-512x512.png"
+
 {
   "name": "Bookshelf",
   "short_name": "Books",
   "icons": [
     {
-      "src": "./android-chrome-192x192.png",
+      "src": 192x192,
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./android-chrome-512x512.png",
+      "src": 512x512,
       "sizes": "512x512",
       "type": "image/png"
     }
