@@ -32,6 +32,7 @@ export function onRemoveCard(evt) {
     return;
   } else {
     console.log(dataId);
+    console.log(evt.target);
 
     removeBtn.remove();
     // localStorage.removeItem(KEY);
