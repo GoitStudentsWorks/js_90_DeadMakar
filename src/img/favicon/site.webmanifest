@@ -1,5 +1,5 @@
-import 192x192 from "/src/img/favicon/android-chrome-192x192.png"
-import 512x512 from "/src/img/favicon/android-chrome-512x512.png"
+import 192x192 from "../../img/favicon/android-chrome-192x192.png"
+import 512x512 from "../../img/favicon/android-chrome-512x512.png"
 
 {
   "name": "Bookshelf",
