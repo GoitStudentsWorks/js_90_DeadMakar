@@ -39,6 +39,7 @@
   --rep-pop-up-background: #fff;
   /*8*/
   --rep-pop-up-text-activated-batton: rgba(17, 17, 17, 0.5);
+  --rep-pop-up-amazon: grayscale(100%);
 }
 
 .dark {
@@ -60,6 +61,7 @@
   --rep-pop-up-background: #202024;
   /*8*/
   --rep-pop-up-text-activated-batton: rgba(255, 255, 255, 0.5);
+  --rep-pop-up-amazon: brightness(0) invert(1);
 }
 
 body {

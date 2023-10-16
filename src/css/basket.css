@@ -167,7 +167,7 @@
 }
 
 .shopping-link {
-  filter: grayscale(100%);
+  filter: var(--rep-pop-up-amazon);
 
   transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
