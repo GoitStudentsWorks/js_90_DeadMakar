@@ -184,6 +184,13 @@
   }
 }
 
+@media screen and (min-width: 768px){
+.modal-book-image {
+    width: 192px;
+    height: 281px;
+}
+}
+
 @media screen and (min-width: 1440px) {
   .modal-btn-books {
     margin: 0;
