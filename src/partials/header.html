@@ -27,26 +27,16 @@
       </nav>
     </div>
     <div class="box-burger">
-      <label id="switch" class="switch">
-        <input type="checkbox" onchange="toggleTheme()" id="slider" />
-        <span class="slider round"></span>
-      </label>
-
       <label class="toggle-theme common-toggle">
         <input
+          id="slider"
           type="checkbox"
-          js-toggle
           class="toggle__input"
           aria-label="toggle dark mode"
+          js-toggle
         />
         <span class="check"></span>
       </label>
-
-      <!-- 
-      <label class="header__selection toggle">
-        <input js-toggle class="toggle__input" aria-label="toggle dark mode" type="checkbox">
-        <span class="toggle__fake"></span>
-      </label> -->
 
       <button id="openBurger" class="header-burger active">
         <svg class="burger-icon" width="28" height="28">
@@ -64,13 +54,13 @@
   <div class="overlay-content">
     <ul class="header-list">
       <li>
-        <a href="./index.html" class="header-link current"
-          ><strong class="burger-home-text">HOME</strong></a
+        <a href="./index.html" class="header-link current-burger"
+          ><strong class="burger-text">HOME</strong></a
         >
       </li>
       <li>
         <a href="./shopping-list.html" class="header-link"
-          ><strong class="shoping-menu-text">SHOPPING LIST</strong>
+          ><strong class="shoping-text">SHOPPING LIST</strong>
           <svg class="shopping-icon-burger" width="20" height="20">
             <use href="./img/icons/symbol-defs.svg#icon-shopping"></use>
           </svg>

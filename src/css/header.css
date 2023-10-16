@@ -1,6 +1,6 @@
-.header {
+/* .header {
   background-color: var(--background-color);
-}
+} */
 @media only screen and (min-width: 768px) and (max-width: 1440px) {
   .header {
     min-width: 768px;
@@ -17,13 +17,13 @@
 
 .header-container {
   height: 64px;
-  border-bottom: 1px solid var(--title-color);
+  border-bottom: 1px solid var(--rep-black);
   border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid var(--title-color);
+  border: 1.5px solid var(--rep-black);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
+  background: var(--rep-white);
 }
 @media only screen and (min-width: 768px) {
   .header-container {
@@ -53,7 +53,7 @@
 }
 
 .logo-name {
-  color: var(--title-color);
+  color: var(--rep-black);
   letter-spacing: -0.56px;
 }
 
@@ -78,15 +78,9 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.56px;
-  color: var(--title-color);
+  color: var(--rep-black);
   display: flex;
   align-items: center;
-}
-
-.current {
-  background-color: var(--yellow-color);
-  padding: 8px 16px;
-  border-radius: 36px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -108,6 +102,9 @@
   gap: 14px;
 }
 
+.shopping-icon {
+  fill: var(--rep-black);
+}
 /* .switch {
   margin: 14px;
 } */
@@ -159,37 +156,34 @@
   flex-direction: column;
   gap: 17px;
 }
+.header-link {
+  color: var(--white-color);
+}
+
 .unscroll {
   overflow: hidden;
 }
-.burger-home-text {
-  color: #111;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.28; /* 128.571% */
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
-}
-.shoping-menu-text {
-  color: #fff;
+
+.shoping-text {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.56px;
   text-transform: uppercase;
 }
+
 .shopping-icon-burger {
   fill: #fff;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .switch {
     margin: none;
   }
-}
+} */
 
 .burger-icon {
   display: initial;
-  stroke: var(--title-color);
+  stroke: var(--rep-black);
 }
 @media only screen and (min-width: 768px) {
   .burger-icon {
@@ -277,4 +271,21 @@ input[type='checkbox']:checked ~ .check {
 
 input[type='checkbox']:checked ~ .check::after {
   transform: translateX(20px);
+}
+
+.current {
+  color: var(--black-color);
+  background-color: var(--yellow-color);
+  padding: 8px 16px;
+  border-radius: 36px;
+}
+.current-burger {
+  font-weight: 700;
+  color: var(--black-color);
+  background-color: var(--yellow-color);
+  padding: 8px 16px;
+  border-radius: 36px;
+}
+.shopping-icon-current {
+  fill: var(--black-color);
 }
