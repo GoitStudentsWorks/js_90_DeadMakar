@@ -146,7 +146,6 @@ function updateList() {
     const adjustedIndex = i % fonds.length;
     const listItem = createListItem(fonds[adjustedIndex], adjustedIndex);
 
-    // Визначте, яку анімацію застосовувати в залежності від поточного стану кнопки
     if (firstClick) {
       listItem.classList.add('smooth-slide-up');
     } else {
@@ -190,7 +189,5 @@ suppBtn.addEventListener('click', () => {
     }
   }, 200);
 });
-
-updateList();
 
 updateList();
