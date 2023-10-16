@@ -24,17 +24,10 @@
   margin-bottom: 40px;
 }
 
-.all-category-name-dark-theme {
-  color: #fff;
-}
-
 .category-name-bold {
   color: var(--violet-color);
 }
 
-.category-name-bold-dark-theme {
-  color: #4f2ee8;
-}
 .category-name {
   color: #b4afaf;
   font-size: 14px;
@@ -79,9 +72,6 @@
   margin-top: 14px;
 }
 
-.book-name-dark-theme {
-  color: var(--background-color);
-}
 .book-author {
   color: #b4afaf;
   font-size: 12px;
@@ -118,10 +108,6 @@
   text-transform: uppercase;
 
   transition: color var(--transition), background-color var(--transition);
-}
-
-.btn-book-open-category-dark-theme {
-  color: var(--background-color);
 }
 
 .btn-book-open-category:hover,

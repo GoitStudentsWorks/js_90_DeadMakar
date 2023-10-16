@@ -49,22 +49,10 @@
   color: var(--violet-color);
 }
 
-.dark-category {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.category-dark ::-webkit-scrollbar-thumb {
-  background: rgba(17, 17, 17, 0.6);
-}
-
 .category-active {
   color: var(--violet-color);
   font-weight: 700;
   text-transform: uppercase;
-}
-
-.active-dark-category {
-  color: #eac645;
 }
 
 @media screen and (min-width: 768px) {
@@ -96,7 +84,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .category-container {
     width: 356px;
   }

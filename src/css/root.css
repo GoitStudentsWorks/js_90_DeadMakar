@@ -29,6 +29,14 @@ body {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
