@@ -94,6 +94,40 @@
 .support-container {
   background-color: transparent;
 }
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.smooth-slide-up {
+  animation: slideInFromBottom 0.5s ease;
+}
+
+.smooth-slide-down {
+  animation: slideInFromTop 0.5s ease;
+}
+
 @media only screen and (min-width: 768px) {
   .fonds-container {
     max-width: 335px;
