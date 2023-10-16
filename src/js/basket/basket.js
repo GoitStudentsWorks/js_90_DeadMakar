@@ -36,5 +36,5 @@ function removeItemCard(clickedItem) {
 
   localStorage.setItem(KEY, JSON.stringify(localCardArr));
 
-  window.location.href = '../../shopping-list.html';
+  window.location.href = '';
 }
