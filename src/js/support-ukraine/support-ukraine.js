@@ -165,16 +165,13 @@ suppBtn.addEventListener('click', () => {
     scrollDown();
   }
 
-
-    resetFonds();
-  }
-
-
-  setTimeout(() => {
-    if (clickCount === 1) {
-      scrollUp();
-    }
-
+  resetFonds();
 });
+
+setTimeout(() => {
+  if (clickCount === 1) {
+    scrollUp();
+  }
+}, 0);
 
 updateList();
