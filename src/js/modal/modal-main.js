@@ -2,6 +2,7 @@ import { fetchBookById } from './modal-api';
 import { generateBookMarkup } from './modal-bookmarkup';
 import { saveBookToStorage } from './modal-local-storage';
 
+const modal = document.querySelector('modal-section');
 const buttonAddToBasket = document.querySelector('.add-btn');
 const buttonRemoveToBasket = document.querySelector('.remove-btn');
 const greetMessage = document.querySelector('.modal-message');
@@ -89,12 +90,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function openModal() {
   const modal = document.querySelector('.modal-section');
+  modal.style.display = 'flex';
   modal?.classList.remove('visually-hidden');
   document.body.style.overflow = 'hidden'; // Забороняємо прокрутку фонового контенту
 }
 
 function closeModal() {
   const modal = document.querySelector('.modal-section');
+  modal.style.display = 'none';
   modal?.classList.add('visually-hidden');
   document.body.style.overflow = ''; // Відновлюємо можливість прокрутки фонового контенту
 }

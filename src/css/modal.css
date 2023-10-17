@@ -6,6 +6,10 @@
   width: 100%;
   height: 100%;
   background: var(--pop-up-background);
+  transition: var(--transition);
+  transform: scale(0.8); /* Початковий масштаб модального вікна */
+  opacity: 0;
+  animation: openModal 0.7s forwards;
 }
 
 .modal-section {
@@ -219,5 +223,25 @@
   .modal-book-image {
     width: 192px;
     height: 281px;
+  }
+}
+
+/* @keyframes openModal {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+} */
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
