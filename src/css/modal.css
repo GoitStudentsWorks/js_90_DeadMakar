@@ -91,6 +91,10 @@
   top: 12px;
 }
 
+.modal-icon-x-close:hover,
+.modal-icon-x-close:focus {
+  stroke: var(--rep-x-focus);
+}
 .amazon {
   filter: var(--rep-pop-up-amazon);
 }

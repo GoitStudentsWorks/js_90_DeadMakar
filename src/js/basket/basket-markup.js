@@ -43,7 +43,7 @@ export function shopCardMarkup(bookData) {
           rel="noopener noreferrer"
           class="shopping-link"
         >
-          <picture>
+          <picture class="picture-amazon">
             <source
               srcset="
                 ${amazon1x},
@@ -80,7 +80,7 @@ export function shopCardMarkup(bookData) {
           rel="noopener noreferrer"
           class="shopping-link"
         >
-          <picture>
+          <picture class="picture-book">
             <source
               srcset="
               ${book1x}, 

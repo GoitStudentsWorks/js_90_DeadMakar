@@ -141,8 +141,6 @@
 }
 
 .shopping-link {
-  filter: var(--rep-pop-up-amazon);
-
   transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -151,7 +149,12 @@
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
   filter: grayscale(0%);
 }
-
+.picture-amazon {
+  filter: var(--rep-pop-up-amazon);
+}
+.picture-book {
+  filter: grayscale(100%);
+}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Sub ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .shopping-error-wrap {
