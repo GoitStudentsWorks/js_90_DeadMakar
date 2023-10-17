@@ -53,41 +53,6 @@
   background: lightgray;
 }
 
-.shopping-book-overlay {
-  position: relative;
-  overflow: hidden;
-  height: 142px;
-  width: 100px;
-}
-
-.shopping-book-overlay:hover .shopping-book-overlay-text,
-.shopping-book-overlay:focus .shopping-book-overlay-text {
-  transform: translateY(-100%);
-}
-
-.shopping-book-overlay-text {
-  background-color: var(--yellow-color);
-
-  display: flex;
-  align-items: center;
-
-  height: 40px;
-  padding: 0px 32px;
-  width: 100%;
-
-  text-align: center;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.29;
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
-
-  border-radius: 0px 0px 8px 8px;
-
-  transform: translateY(0);
-  transition: transform var(--transition);
-}
-
 .shopping-item-container {
   margin-left: 14px;
 }
