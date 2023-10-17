@@ -33,7 +33,7 @@ function removeItemCard(clickedItem) {
   const listItem = clickedItem.target.closest('li.shopping-item');
 
   const itemId = clickedItem.target.dataset.id;
-  console.log(clickedItem.target.dataset.id);
+  
   const index = localCardArr.findIndex(item => item._id === itemId);
 
   if (index !== -1) {
@@ -41,6 +41,6 @@ function removeItemCard(clickedItem) {
     localStorage.setItem(KEY, JSON.stringify(localCardArr));
     selectors.ShopStubEl.innerHTML = '';
     onGetLocalArr();
-    // window.location.href = '';
+    
   }
 }
