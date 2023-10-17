@@ -17,7 +17,7 @@ export function shopCardMarkup(bookData) {
     .map(book => {
       return `<li class="shopping-item">
       <div class="shopping-list-item">
-        <div class="shopping-book-overlay">
+        
           <img
             class="shopping-book-img"
             src="${book.book_image}"
@@ -25,9 +25,7 @@ export function shopCardMarkup(bookData) {
             width="100"
             height="142"
           />
-
-      <p class="shopping-book-overlay-text">quick view</p>
-    </div>
+          
 
     <div class="shopping-item-container">
       <h3 class="shopping-book-title">${book.title}</h3>
