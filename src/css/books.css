@@ -150,7 +150,7 @@
 .btn-book-open-category:hover,
 .btn-book-open-category:focus {
   background-color: var(--violet-color);
-  color: var(--background-color);
+  color: var(--rep-white);
 }
 
 @media screen and (min-width: 768px) {
