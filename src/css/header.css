@@ -147,6 +147,7 @@
 .header-link {
   color: var(--white-color);
 }
+/*  */
 .shoping-menu-text {
   color: var(--white-color);
 }
@@ -164,17 +165,28 @@
   gap: 4px;
 }
 
-.shopping-icon-burger {
-  fill: var(--white-color);
-}
-.shopping-icon-current {
+/* сумка пк шоп */
+.shopping-icon {
   fill: var(--black-color);
 }
 
+/* сумка пк хом */
+.shopping-icon-current {
+  fill: var(--rep-black); /* ! */
+}
+
+.shopping-icon-burger {
+  fill: var(--white-color);
+}
+.shopping-icon-burger-current {
+  fill: var(--black-color);
+}
+/* мобилка картинка бургер */
 .burger-icon {
   display: initial;
   stroke: var(--rep-black);
 }
+
 @media only screen and (min-width: 768px) {
   .burger-icon {
     display: none;
@@ -279,9 +291,6 @@ input[type='checkbox']:checked ~ .check::after {
   background-color: var(--yellow-color);
   padding: 8px 16px;
   border-radius: 36px;
-}
-.shopping-icon {
-  fill: var(--rep-black);
 }
 
 .hed-text {
