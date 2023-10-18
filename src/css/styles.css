@@ -27,7 +27,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .category-and-support {
     margin-top: 0;
     flex-direction: column;
@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .support-and-busket-container .fonds-container {
     display: block;
   }
@@ -94,7 +94,7 @@
     padding: 0;
   }
   .header {
-    min-width: 1280px;
+    min-width: 1440px;
   }
 }
 
