@@ -73,7 +73,7 @@ document.addEventListener(
   'DOMContentLoaded',
   e => {
     const userThemePreference = themePreference();
-    const toggle = document.querySelector('[js-toggle]');
+    const toggle = document.querySelector('.js-toggle');
     const clearStorage = document.querySelector('[js-clearStorage]');
     const html = document.documentElement;
 
