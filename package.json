@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Bookkeepers-Project/",
+    "build": "vite build --base=/js_90_DeadMakar/",
     "preview": "vite preview"
   },
   "devDependencies": {
